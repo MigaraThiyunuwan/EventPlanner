@@ -18,7 +18,7 @@ export default function SideBar() {
           Catering
         </Sidebar.Item>
         <Sidebar.Item href="#" icon={HiInbox}>
-          DJ
+          Music
         </Sidebar.Item>
         <Sidebar.Item href="#" icon={HiArrowSmRight}>
           Decorations

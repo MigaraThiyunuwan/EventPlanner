@@ -1,12 +1,12 @@
 import React from 'react'
-import '../App.css'
-import NavigatePath from './NavigatePath';
-import NavigationBar from './NavigationBar';
-import TableComponent from './TableComponent';
-import SideBar from './SideBar';
-import FooterComponent from'./FooterComponent';
+import '../css/style.css'
+import NavigatePath from '../components/NavigatePath'
+import NavigationBar from '../components/NavigationBar'
+import SideBar from '../components/SideBar'
+import TableComponent from '../components/TableComponent'
+import FooterComponent from '../components/FooterComponent'
 
-export default function AdminDashBoard() {
+function AdminDashboard() {
   return (
     <div className="app-container">
       <NavigationBar className="NavigationBar" />
@@ -23,3 +23,5 @@ export default function AdminDashBoard() {
     </div>
   )
 }
+
+export default AdminDashboard

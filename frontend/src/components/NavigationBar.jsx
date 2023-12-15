@@ -18,7 +18,7 @@ export default function NavigationBar() {
         <Navbar.Toggle />
       </div> */}
       <Navbar.Collapse>
-        <Navbar.Link className='text-lg mt-1' href="#">
+        <Navbar.Link className='text-lg mt-1' href="/">
           Home
         </Navbar.Link>
         <Navbar.Link className='text-lg mt-1' href="#">About</Navbar.Link>
