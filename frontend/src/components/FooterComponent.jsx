@@ -4,7 +4,7 @@ import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from 'react-
 import logo_png from '../images/logo_trans.png'
 export default function FooterComponent() {
     return (
-        <Footer container>
+        <Footer container className='footercom'>
             <div className="w-full">
                 <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
                     <div>

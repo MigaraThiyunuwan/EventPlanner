@@ -6,6 +6,10 @@ import './css/style.css';
 import Home from './pages/Home'
 import AdminDashboard from './pages/AdminDashboard';
 import AdminProfile from './pages/AdminProfile';
+import Music from './pages/Music';
+import SignUp from './pages/SignUp'
+import SignIn from './pages/SignIn';
+import ContactUs from './pages/ContactUs';
 
 // import HelloWorld from './HelloWorld';
 
@@ -22,6 +26,10 @@ function App() {
       <Route path="/" element={<Home/>}></Route>
       <Route path="admindashbord" element={<AdminDashboard/>}></Route>
       <Route path="adminprofile" element={<AdminProfile/>}></Route>
+      <Route path="music" element={<Music/>}></Route>
+      <Route path="signup" element={<SignUp/>}></Route>
+      <Route path="signin" element={<SignIn/>}></Route>
+      <Route path="contactus" element={<ContactUs/>}></Route>
     </Routes>
     </BrowserRouter>
   

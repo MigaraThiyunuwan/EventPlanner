@@ -9,7 +9,7 @@ import FooterComponent from '../components/FooterComponent'
 function AdminDashboard() {
   return (
     <div className="app-container">
-      <NavigationBar className="NavigationBar" />
+      <NavigationBar className="NavigationBar"/>
       
       <div className="content-container">
         <SideBar className="SideBar" />
