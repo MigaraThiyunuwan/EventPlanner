@@ -1,10 +1,11 @@
-
-
 body {
   margin: 10;
   padding: 10;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background-color: #f0f2f5;
+  background-color: #faf4ec;
+  /* D5ABB2 */
+  /* f0f2f5 */
+  /* e8fce6 */
 }
 
 .app-container {
@@ -18,14 +19,24 @@ body {
 }
 
 /* Style for NavigationBar, SideBar, and TableComponent */
-.NavigationBar {
+/* .NavigationBar {
   background-color: #282c34;
   color: white;
   padding: 10px;
+} */
+.footercom{
+  background-color: #CEDEBD;
+  /* bffcba */
+}
+.navcom{
+  background-color: #ffffff;
+  /* B76E79 */
+}
+.cardcontainer{
+  margin: 10px;
 }
 
 .SideBar {
-  background-color: #f0f2f5;
   color: white;
   padding: 10px;
   width: 200px;

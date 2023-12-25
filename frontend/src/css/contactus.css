@@ -1,0 +1,9 @@
+.contactus-container{
+    display: flex;
+    justify-content: center;
+}
+.vl1{
+    border-left: 2px solid rgb(0, 0, 0);
+    height: 500px;
+    margin: 20px;
+}
