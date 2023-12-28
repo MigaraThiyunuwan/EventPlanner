@@ -18,19 +18,10 @@ body {
   display: flex; /* Display SideBar and TableComponent horizontally */
 }
 
-/* Style for NavigationBar, SideBar, and TableComponent */
-/* .NavigationBar {
-  background-color: #282c34;
-  color: white;
-  padding: 10px;
-} */
 .footercom{
   background-color: #CEDEBD;
+  
   /* bffcba */
-}
-.navcom{
-  background-color: #ffffff;
-  /* B76E79 */
 }
 .cardcontainer{
   margin: 10px;
@@ -53,4 +44,30 @@ body {
   margin: 10px;
 }
 
-/* Add styles for other components as needed */
+
+.navcom{
+  background-color: #ffffff62;
+  
+  /* B76E79 */
+}
+.names {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.names:hover {
+  color: #000000; 
+  text-decoration: underline;
+}
+.navbutton{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: rgb(255, 255, 255);
+  background-color: #435334;
+}
+
+.navlogo{
+  
+  height: 40px;
+}
+

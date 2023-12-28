@@ -5,11 +5,12 @@ import NavigationBar from '../components/NavigationBar'
 import SideBar from '../components/SideBar'
 import TableComponent from '../components/TableComponent'
 import FooterComponent from '../components/FooterComponent'
+import NewNav from '../components/NewNav'
 
 function AdminDashboard() {
   return (
     <div className="app-container">
-      <NavigationBar className="NavigationBar"/>
+      <NewNav/>
       
       <div className="content-container">
         <SideBar className="SideBar" />

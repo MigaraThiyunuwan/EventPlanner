@@ -10,6 +10,7 @@
 }
 
 .formgrid {
+    justify-content: center;
     width: 500px;
     height: 500px;
     padding: 30px;
@@ -24,11 +25,22 @@
     width: 1000px;
     height: 550px;
 }
+.textArea{
+    margin-bottom: 20px;
+}
 :root {
     --primary-dark: #435334;
     --primary-light: #D5ABB2;
   }
   
+  .subButton{
+    display: flex;
+    justify-content: center;
+  }
   .button {
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
     background-color: var(--primary-dark);
   }
+ 

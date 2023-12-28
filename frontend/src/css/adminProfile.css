@@ -525,6 +525,9 @@ header {
       overflow: initial;
       margin-bottom: 0px;
     }
+    .myunique{
+      display: block;
+    }
   }
   
   @media screen and (max-width: 350px) {

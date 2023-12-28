@@ -4,12 +4,14 @@ import NavigationBar from '../components/NavigationBar'
 import migara from '../images/migara.jpg'
 import FooterComponent from '../components/FooterComponent'
 import SideBar from '../components/SideBar'
+import NewNav from '../components/NewNav'
 
 function AdminProfile() {
     return (
         <div>
-            <NavigationBar />
+            <NewNav/>
             <div className='myunique'>
+                
                 <SideBar/>
                 
                 <div className="container">

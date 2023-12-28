@@ -10,6 +10,7 @@ import Music from './pages/Music';
 import SignUp from './pages/SignUp'
 import SignIn from './pages/SignIn';
 import ContactUs from './pages/ContactUs';
+import Portfolio from './pages/Portfolio';
 
 // import HelloWorld from './HelloWorld';
 
@@ -30,6 +31,8 @@ function App() {
       <Route path="signup" element={<SignUp/>}></Route>
       <Route path="signin" element={<SignIn/>}></Route>
       <Route path="contactus" element={<ContactUs/>}></Route>
+      <Route path="portfolio" element={<Portfolio/>}></Route>
+      
     </Routes>
     </BrowserRouter>
   
