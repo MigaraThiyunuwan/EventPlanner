@@ -2,7 +2,7 @@ import { Card, Button, Label, TextInput, Table } from "flowbite-react";
 import UserPhoto from "../images/User.jpg";
 import React, { lazy, useState } from "react";
 const NavigationBar = lazy(() => import("../components/NavigationBar"));
-const FooterComponent = lazy(() => import("../components/FooterComponent"));
+const Footer = lazy(() => import("../components/Footer"));
 
 const UserProfile = () => {
   const [activeTab, setActiveTab] = useState("accountDetails");
@@ -222,8 +222,7 @@ const UserProfile = () => {
         </div>
       </section>
       {/*Footer*/}
-      <FooterComponent />
-      59559
+      <Footer />
     </>
   );
 };
