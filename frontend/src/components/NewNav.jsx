@@ -13,13 +13,12 @@ function NewNav() {
                 <Navbar.Link href="/" className='names'>
                     Home
                 </Navbar.Link>
-                <Navbar.Link  href="#" className='names'>
-                    About
-                </Navbar.Link>
-                <Navbar.Link href="#" className='names'>Services</Navbar.Link>
+                
+                <Navbar.Link href="services" className='names'>Services</Navbar.Link>
                 <Navbar.Link href="portfolio" className='names'>Portfolio</Navbar.Link>
-                <Navbar.Link href="contactus" className='names'>Contact</Navbar.Link>
-                <a  href="signup"><Button className='navbutton'>Login</Button></a>
+                <Navbar.Link  href="aboutus" className='names'>About</Navbar.Link>
+                <Navbar.Link href="contact" className='names'>Contact</Navbar.Link>
+                <a  href="signin"><Button className='navbutton'>Login</Button></a>
             </Navbar.Collapse>
         </Navbar>
     )

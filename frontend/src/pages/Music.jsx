@@ -1,14 +1,14 @@
 import React from 'react'
-import NavigationBar from '../components/NavigationBar'
 import PriceCard from '../components/PriceCard'
-import FooterComponent from '../components/FooterComponent'
 import NewNav from '../components/NewNav'
+import Footer from '../components/Footer'
+import { Button, Tooltip } from 'flowbite-react';
 
 function Music() {
   return (
     <div>
       {/* <NavigationBar /> */}
-      <NewNav/>
+      <NewNav />
 
       <div className='pageheader'>
         Entertainment
@@ -80,10 +80,12 @@ function Music() {
 
       <div className='hehe'>
         <div class="flex justify-end">
-          <a href="#" class="nextBtn">Next Page</a>
+          <Tooltip content="Skip Choosing Entertainment and Go Next Page" style="light">
+            <a href="#" ><Button class="nextBtn">Next Page</Button> </a>
+          </Tooltip>
         </div>
       </div>
-      <FooterComponent />
+      <Footer />
     </div>
   )
 }

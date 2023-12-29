@@ -82,6 +82,10 @@ button1:hover {
 	
 }
 
+.serviceimg{
+	height: 225px;
+}
+
 .aboutimg {
 	
 	box-shadow: 0px 0px 18px #ccc;
@@ -122,4 +126,5 @@ button1:hover {
 	.hometitle {
 		font-size: 20px
 	}
+	
 }

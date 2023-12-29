@@ -10,7 +10,13 @@ import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import ContactUs from "./pages/ContactUs";
 import UserProfile from "./pages/UserProfile";
-import Portfolio from "./pages/portfolio";
+import Portfolio from "./pages/Portfolio";
+import AdminSignin from "./pages/AdminSignin";
+import AdminManage from "./pages/AdminManage";
+import AdminMessages from "./pages/AdminMessages";
+import AboutUs from "./pages/AboutUs";
+import Contact from "./pages/Contact";
+import Service from "./pages/Service";
 
 // import HelloWorld from './HelloWorld';
 
@@ -28,18 +34,15 @@ function App() {
       <Route path="signin" element={<SignIn/>}></Route>
       <Route path="contactus" element={<ContactUs/>}></Route>
       <Route path="portfolio" element={<Portfolio/>}></Route>
-      
+      <Route path="user_profile" element={<UserProfile />}></Route>
+      <Route path="adminlogin" element={<AdminSignin />}></Route>
+      <Route path="managepackages" element={<AdminManage />}></Route>
+      <Route path="adminmessages" element={<AdminMessages/>}></Route>
+      <Route path="aboutus" element={<AboutUs/>}></Route>
+      <Route path="contact" element={<Contact/>}></Route>
+      <Route path="services" element={<Service/>}></Route>
     </Routes>
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="admindashbord" element={<AdminDashboard />}></Route>
-        <Route path="adminprofile" element={<AdminProfile />}></Route>
-        <Route path="music" element={<Music />}></Route>
-        <Route path="signup" element={<SignUp />}></Route>
-        <Route path="signin" element={<SignIn />}></Route>
-        <Route path="contactus" element={<ContactUs />}></Route>
-        <Route path="/user_profile" element={<UserProfile />}></Route>
-      </Routes>
+      
     </BrowserRouter>
   );
 }

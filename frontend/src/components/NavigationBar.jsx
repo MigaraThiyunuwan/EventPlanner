@@ -21,9 +21,10 @@ export default function NavigationBar() {
           <Navbar.Link className='names text-lg mt-1' href="/">
             Home
           </Navbar.Link>
-          <Navbar.Link className='names text-lg mt-1' href="#">About</Navbar.Link>
+          
           <Navbar.Link className='names text-lg mt-1' href="#">Services</Navbar.Link>
           <Navbar.Link className='names text-lg mt-1' href="portfolio">Portfolio</Navbar.Link>
+          <Navbar.Link className='names text-lg mt-1' href="aboutus">About</Navbar.Link>
           <Navbar.Link className='names text-lg mt-1' href="contactus">Contact</Navbar.Link>
           <div className="flex md:order-2">
             <a  href="signup"><Button className='navbutton'>Login</Button></a>

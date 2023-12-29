@@ -14,10 +14,10 @@ const Footer = () => {
     { name: "Decorations", link: "" },
   ];
   const QuickLinks = [
-    { name: "Home", link: "" },
+    { name: "Home", link: "/" },
     { name: "About", link: "" },
-    { name: "Potfolio", link: "" },
-    { name: "Contact", link: "" },
+    { name: "Potfolio", link: "portfolio" },
+    { name: "Contact", link: "contactus" },
   ];
   const SocialMedia = [
     {
@@ -44,7 +44,8 @@ const Footer = () => {
 
   return (
     <footer className="bg-secondary text-gray-800">
-      <div className="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-4 gap-6 sm:px-8 px-5 py-16">
+      <div className="footerContent grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-4 gap-6 sm:px-8 px-5 py-16">
+        
         {/*logo*/}
         <div>
           <img src={Logo} alt="BlissHub Logo" className="max-w-full max-h-10" />
@@ -53,13 +54,13 @@ const Footer = () => {
         {/*links*/}
         <div>
           <ul>
-            <h1 className="mb-2 text-lg font-semibold uppercase">
+            <h1 className="footerText mb-2 text-lg font-semibold uppercase">
               Quick Links
             </h1>
             {QuickLinks.map((link) => (
               <li key={link.name}>
                 <a
-                  className="text-gray-500 py-3 hover:text-primary duration-300 text-sm cursor-pointer leading-6"
+                  className="footerText text-gray-500 py-3 hover:text-primary duration-300 text-sm cursor-pointer leading-6"
                   href={link.link}
                 >
                   {link.name}
@@ -72,11 +73,11 @@ const Footer = () => {
         {/*services*/}
         <div>
           <ul>
-            <h1 className="mb-2 text-lg font-semibold">SERVICES</h1>
+            <h1 className="footerText mb-2 text-lg font-semibold">SERVICES</h1>
             {Services.map((service) => (
               <li key={service.name}>
                 <a
-                  className="text-gray-500 py-3 hover:text-primary duration-300
+                  className="footerText text-gray-500 py-3 hover:text-primary duration-300
           text-sm cursor-pointer leading-6"
                   href={service.link}
                 >
@@ -90,18 +91,18 @@ const Footer = () => {
         {/*contact*/}
         <div>
           <ul>
-            <h1 className="mb-2 font-semibold uppercase text-lg">Contact Us</h1>
+            <h1 className="footerText mb-2 font-semibold uppercase text-lg">Contact Us</h1>
             {SocialMedia.map((link) => (
               <li key={link.name}>
                 <div className="flex justify-start">
                   <a
-                    className="text-gray-500 font-semibold py-2 hover:text-primary duration-300 cursor-pointer leading-6"
+                    className="footerText text-gray-500 font-semibold py-2 hover:text-primary duration-300 cursor-pointer leading-6"
                     href={link.link}
                   >
                     {link.icon}
                   </a>
                   <a
-                    className="text-gray-500 ml-4 my-1 pt-1 hover:text-primary duration-300
+                    className="footerText text-gray-500 ml-4 my-1 pt-1 hover:text-primary duration-300
           text-sm cursor-pointer leading-6"
                     href={link.link}
                   >

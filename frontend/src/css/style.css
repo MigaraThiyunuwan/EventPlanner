@@ -3,6 +3,7 @@ body {
   padding: 10;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   background-color: #faf4ec;
+  /* background-image: linear-gradient(45deg, #7c9885, #b5b682); */
   /* D5ABB2 */
   /* f0f2f5 */
   /* e8fce6 */
@@ -10,20 +11,19 @@ body {
 
 .app-container {
   display: flex;
-  flex-direction: column; /* Stack children vertically */
-  height: 100vh; /* Make the container take up the full height of the viewport */
+  flex-direction: column;
+  /* Stack children vertically */
+  height: 100vh;
+  /* Make the container take up the full height of the viewport */
 }
 
 .content-container {
-  display: flex; /* Display SideBar and TableComponent horizontally */
+  display: flex;
+  /* Display SideBar and TableComponent horizontally */
 }
 
-.footercom{
-  background-color: #CEDEBD;
-  
-  /* bffcba */
-}
-.cardcontainer{
+
+.cardcontainer {
   margin: 10px;
 }
 
@@ -36,38 +36,58 @@ body {
 .TableComponent {
   flex: 1;
   padding: 8px;
-  
+
   width: 100%;
 }
 
-.path{
+.path {
   margin: 10px;
 }
 
 
-.navcom{
+.navcom {
   background-color: #ffffff62;
-  
+
   /* B76E79 */
 }
+
 .names {
   font-size: 20px;
   font-weight: bold;
   margin-top: 20px;
 }
+
 .names:hover {
-  color: #000000; 
+  color: #000000;
   text-decoration: underline;
 }
-.navbutton{
+
+.navbutton {
   margin-top: 10px;
   margin-bottom: 10px;
   color: rgb(255, 255, 255);
   background-color: #435334;
 }
 
-.navlogo{
-  
+.navlogo {
   height: 40px;
 }
 
+.footerText{
+  font-size: 15px;
+  
+}
+
+@media screen and (max-width: 550px) {
+  .footerContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .footerText{
+    font-size: 20px;
+    margin: 10px;
+  }
+}

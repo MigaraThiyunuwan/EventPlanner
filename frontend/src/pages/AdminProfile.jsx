@@ -1,110 +1,171 @@
 import React from 'react'
+import { Card, Button, Label, TextInput, Table } from "flowbite-react";
+import UserPhoto from "../images/User.jpg";
 import '../css/adminProfile.css'
-import NavigationBar from '../components/NavigationBar'
-import migara from '../images/migara.jpg'
-import FooterComponent from '../components/FooterComponent'
-import SideBar from '../components/SideBar'
+import { useState } from "react";
 import NewNav from '../components/NewNav'
+import Footer from '../components/Footer'
 
-function AdminProfile() {
+
+const AdminProfile = () => {
+    const [activeTab, setActiveTab] = useState("accountDetails");
+
     return (
         <div>
-            <NewNav/>
-            <div className='myunique'>
-                
-                <SideBar/>
-                
-                <div className="container">
+            <NewNav />
+            <section className="mt-12 mb-16 mx-4 grid grid-cols-1 gap-2 md:grid-cols-4 lg:grid-cols-4">
+                <div className="items-center h-full col-span-1 md:col-span-1">
+                    <Card className="text-center max-w-sm w-full md:max-w-full mx-auto">
+                        <img
+                            alt="Bonnie image"
+                            height="100"
+                            src={UserPhoto}
+                            width="100"
+                            className="mb-3 rounded-full shadow-lg mx-auto"
+                        />
+                        <h5 className="mb-1 text-2xl font-medium text-gray-900 dark:text-white">
+                            Migara Thiyunuwan
+                        </h5>
 
-
-                    <section className="userProfile card">
-                        <div className="profile">
-                            <figure><img src={migara} alt="profile" width="250px" height="250px" /></figure>
-                        </div>
-                    </section>
-
-                    <section className="work_skills card">
-                        <div className="work">
-                            <h1 className="heading">work</h1>
-                            <div className="primary">
-                                <h1>Spotify New York</h1>
-                                <span>Primary</span>
-                                <p>170 William Street <br /> New York, NY 10038-212-315-51</p>
-                            </div>
-
-                            <div className="secondary">
-                                <h1>Metropolitan <br /> Museum</h1>
-                                <span>Secondary</span>
-                                <p>S34 E 65th Street <br /> New York, NY 10651-78 156-187-60</p>
-                            </div>
-                        </div>
-
-                      
-                    </section>
-
-                    <section className="userDetails card">
-                        <div className="userName">
-                            <h1 className="name">Migara Thiyunuwan</h1>
-                            <p>BlissHub Manager</p>
-                        </div>
-
-                        <div className="rank">
-                            <h1 className="heading">Rankings</h1>
-                            <span>8,6</span>
-                            <div className="rating">
-                                <i className="ri-star-fill rate"></i>
-                                <i className="ri-star-fill rate"></i>
-                                <i className="ri-star-fill rate"></i>
-                                <i className="ri-star-fill rate"></i>
-                                <i className="ri-star-fill rate underrate"></i>
-                            </div>
-                        </div>
-
-                        <div className="btns">
-                            <ul>
-                                <li className="sendMsg">
-                                    <i className="ri-chat-4-fill ri"></i>
-                                    <a href="#">Send Message</a>
-                                </li>
-
-                                <li className="sendMsg active">
-                                    <i className="ri-check-fill ri"></i>
-                                    <a href="#">Contacts</a>
-                                </li>
-
-                                <li className="sendMsg">
-                                    <a href="#">Report User</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
-
-                    <section className="timeline_about card">
-                        <div className="tabs">
-                            <ul>
-                                <li className="timeline">
-                                    <i className="ri-eye-fill ri"></i>
-                                    <span>Timeline</span>
-                                </li>
-
-                                <li className="about active">
-                                    <i className="ri-user-3-fill ri"></i>
-                                    <span>About</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div className="contact_Info">
-                            <h1 className="heading">Contact Information</h1>
-                            <ul>
-                                {/* Your list items go here */}
-                            </ul>
-                        </div>
-                    </section>
+                        {/* Edit Profile Picture Button */}
+                        <section className="flex justify-center mt-2 mb-10">
+                            <a href='admindashbord'>
+                            <Button className="w-[150px] md:w-[170px] rounded-lg bg-primary uppercase text-white hover:!bg-secondary">
+                                 Admin Dashboard
+                            </Button>
+                            </a>
+                        </section>
+                    </Card>
                 </div>
-            </div>
 
-            <FooterComponent />
+                <div className="col-span-1 md:col-span-3">
+                    <div className="bg-white rounded-lg shadow-lg pt-4 px-2 mb-2">
+                        <h3 className=" m-4 text-xl font-bold text-primary-600 md:text-2xl">
+                            Account settings
+                        </h3>
+                        <div className="w-full h-10 flex justify-start rounded-lg shadow-sm mb-2">
+                            <Button
+                                className={`text-black bg-white rounded-md shadow-lg my-2 mr-1 ml-3 p-2 uppercase text-md font-semibold hover:!border-lg hover:!border-primary ${activeTab === "accountDetails"
+                                    }`}
+                                onClick={() => setActiveTab("accountDetails")}
+                            >
+                                Account Details
+                            </Button>
+                            <Button
+                                className={`text-black bg-white rounded-md shadow-lg my-2 p-2 text-md font-semibold uppercase hover:border-lg hover:border-primary ${activeTab === "changePassword"
+                                    }`}
+                                onClick={() => setActiveTab("changePassword")}
+                            >
+                                Change Password
+                            </Button>
+                        </div>
+
+                        {/*account details*/}
+                        {activeTab === "accountDetails" && (
+                            <div className="mt-2">
+                                <h3 className=" m-4 text-xl font-bold text-primary-600 md:text-xl">
+                                    Change Account Details
+                                </h3>
+                                <form className="flex max-w-full flex-col gap-4 m-6">
+                                    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                                        <div>
+                                            <div className="mb-2 block">
+                                                <Label htmlFor="small" value="First Name" />
+                                            </div>
+                                            <TextInput id="small" type="text" sizing="sm" />
+                                        </div>
+                                        <div>
+                                            <div className="mb-2 block">
+                                                <Label htmlFor="small" value="Last Name" />
+                                            </div>
+                                            <TextInput id="small" type="text" sizing="sm" />
+                                        </div>
+                                    </div>
+                                    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                                        <div>
+                                            <div className="mb-2 block">
+                                                <Label htmlFor="small" value="Phone Number" />
+                                            </div>
+                                            <TextInput id="small" type="text" sizing="sm" />
+                                        </div>
+                                        <div>
+                                            <div className="mb-2 block">
+                                                <Label htmlFor="small" value="Address" />
+                                            </div>
+                                            <TextInput id="small" type="text" sizing="sm" />
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div className="mb-2 block">
+                                            <Label htmlFor="email1" value="Email Address" />
+                                        </div>
+                                        <TextInput
+                                            id="email1"
+                                            type="email"
+                                            placeholder="name@flowbite.com"
+                                            required
+                                        />
+                                    </div>
+
+                                    <section className="flex justify-end mt-4 mb-10">
+                                        <Button className="w-[150px] md:w-[120px] rounded-lg bg-primary uppercase text-white hover:!bg-secondary">
+                                            Edit Details
+                                        </Button>
+                                    </section>
+                                </form>
+                            </div>
+                        )}
+
+                        {/*change password*/}
+                        {activeTab === "changePassword" && (
+                            <div className="mt-2">
+                                <h3 className="m-4 text-xl font-bold text-primary-600 md:text-xl">
+                                    Change Password
+                                </h3>
+                                <form className="flex max-w-full flex-col gap-4 m-6">
+                                    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                                        <div>
+                                            <div className="mb-2 block">
+                                                <Label htmlFor="password2" value="New password" />
+                                            </div>
+                                            <TextInput
+                                                id="password2"
+                                                type="password"
+                                                required
+                                                shadow
+                                            />
+                                        </div>
+                                        <div>
+                                            <div className="mb-2 block">
+                                                <Label
+                                                    htmlFor="repeat-password"
+                                                    value="Confirm password"
+                                                />
+                                            </div>
+                                            <TextInput
+                                                id="repeat-password"
+                                                type="password"
+                                                required
+                                                shadow
+                                            />
+                                        </div>
+                                    </div>
+                                    <section className="flex justify-end mt-4 mb-10">
+                                        <Button className="w-[180px] md:w-[180px] rounded-lg bg-primary uppercase text-white hover:!bg-secondary">
+                                            Change Password
+                                        </Button>
+                                    </section>
+                                </form>
+                            </div>
+                        )}
+                    </div>
+
+                    
+                </div>
+            </section>
+
+            <Footer />
 
 
 

@@ -1,9 +1,8 @@
 import React from 'react'
-import NavigationBar from '../components/NavigationBar'
 import {Textarea} from 'flowbite-react';
 import logo from '../images/logo_trans.png'
-import FooterComponent from '../components/FooterComponent'
 import NewNav from '../components/NewNav';
+import Footer from '../components/Footer';
 
 function ContactUs() {
     return (
@@ -38,7 +37,7 @@ function ContactUs() {
                 </div>
 
             </div>
-            <FooterComponent />
+          <Footer/>
         </div>
     )
 }

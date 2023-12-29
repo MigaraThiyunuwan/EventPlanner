@@ -1,8 +1,7 @@
 import React from 'react'
-import NavigationBar from '../components/NavigationBar'
 import '../css/signup.css'
-import FooterComponent from '../components/FooterComponent'
 import NewNav from '../components/NewNav'
+import Footer from '../components/Footer'
 
 function SignUp() {
     return (
@@ -55,7 +54,7 @@ function SignUp() {
                 </div>
 
             </div>
-            <FooterComponent />
+            <Footer/>
 
 
         </div>
