@@ -10,8 +10,9 @@ import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import ContactUs from "./pages/ContactUs";
 import UserProfile from "./pages/UserProfile";
-
-// import HelloWorld from './HelloWorld';
+import Catering from "./pages/Catering";
+import Decoration from "./pages/Decoration";
+import Photography from "./pages/Photography";
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
         <Route path="signin" element={<SignIn />}></Route>
         <Route path="contactus" element={<ContactUs />}></Route>
         <Route path="/user_profile" element={<UserProfile />}></Route>
+        <Route path="/catering" element={<Catering />}></Route>
+        <Route path="/decoration" element={<Decoration />}></Route>
+        <Route path="/photography" element={<Photography />}></Route>
       </Routes>
     </BrowserRouter>
   );

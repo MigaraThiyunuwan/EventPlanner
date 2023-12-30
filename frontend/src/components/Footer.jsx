@@ -91,8 +91,8 @@ const Footer = () => {
         <div>
           <ul>
             <h1 className="mb-2 font-semibold uppercase text-lg">Contact Us</h1>
-            {SocialMedia.map((link) => (
-              <li key={link.name}>
+            {SocialMedia.map((link, index) => (
+              <li key={index}>
                 <div className="flex justify-start">
                   <a
                     className="text-gray-500 font-semibold py-2 hover:text-primary duration-300 cursor-pointer leading-6"
