@@ -41,17 +41,15 @@ const UserProfile = () => {
             </h3>
             <div className="w-full h-10 flex justify-start rounded-lg shadow-sm mb-2">
               <Button
-                className={`text-black bg-white rounded-md shadow-lg my-2 mr-1 ml-3 p-2 uppercase text-md font-semibold hover:!border-lg hover:!border-primary ${
-                  activeTab === "accountDetails"
-                }`}
+                className={`text-black bg-white rounded-md shadow-lg my-2 mr-1 ml-3 p-2 uppercase text-md font-semibold hover:!border-lg hover:!border-primary ${activeTab === "accountDetails"
+                  }`}
                 onClick={() => setActiveTab("accountDetails")}
               >
                 Account Details
               </Button>
               <Button
-                className={`text-black bg-white rounded-md shadow-lg my-2 p-2 text-md font-semibold uppercase hover:border-lg hover:border-primary ${
-                  activeTab === "changePassword"
-                }`}
+                className={`text-black bg-white rounded-md shadow-lg my-2 p-2 text-md font-semibold uppercase hover:border-lg hover:border-primary ${activeTab === "changePassword"
+                  }`}
                 onClick={() => setActiveTab("changePassword")}
               >
                 Change Password
@@ -203,6 +201,23 @@ const UserProfile = () => {
                       10000
                     </td>
                   </tr>
+                  <tr className="border-b-200 border-blue-600">
+                    <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
+                      2
+                    </td>
+                    <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
+                      2023/12/01
+                    </td>
+                    <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
+                      Pending
+                    </td>
+                    <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
+                      Photography, Decorations, Photography, Decorations, Photography
+                    </td>
+                    <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
+                      10000
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -213,7 +228,15 @@ const UserProfile = () => {
                   <div>2023/12/01</div>
                   <div>Pending</div>
                 </div>
-
+                <div>Photography, Decorations, Photography, Decorations</div>
+                <div>10000</div>
+              </div>
+              <div className="bg-white p-4 space-y-3 rounded-lg shadow">
+                <div>2</div>
+                <div className="flex items-center space-x-4 text-sm">
+                  <div>2023/12/01</div>
+                  <div>Pending</div>
+                </div>
                 <div>Photography, Decorations</div>
                 <div>10000</div>
               </div>

@@ -10,23 +10,24 @@ export default function NavigationBar() {
     
       <Navbar fluid rounded className='navcom'>
         <Navbar.Brand href="/">
-          <img src={logotrans} className="mr-3 h-8 sm:h-9" alt="Flowbite React Logo" />
+          <img src={logotrans} className="navlogo mr-3 h-8 sm:h-9" alt="Flowbite React Logo" />
           {/* <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite React</span> */}
         </Navbar.Brand>
-        {/* <div className="flex md:order-2">
-        <Button>Get started</Button>
+        
+        
         <Navbar.Toggle />
-        </div> */}
+        
         <Navbar.Collapse>
-          <Navbar.Link className='text-lg mt-1' href="/">
+          <Navbar.Link className='names text-lg mt-1' href="/">
             Home
           </Navbar.Link>
-          <Navbar.Link className='text-lg mt-1' href="#">About</Navbar.Link>
-          <Navbar.Link className='text-lg mt-1' href="#">Services</Navbar.Link>
-          <Navbar.Link className='text-lg mt-1' href="#">Pricing</Navbar.Link>
-          <Navbar.Link className='text-lg mt-1' href="contactus">Contact</Navbar.Link>
+          
+          <Navbar.Link className='names text-lg mt-1' href="#">Services</Navbar.Link>
+          <Navbar.Link className='names text-lg mt-1' href="portfolio">Portfolio</Navbar.Link>
+          <Navbar.Link className='names text-lg mt-1' href="aboutus">About</Navbar.Link>
+          <Navbar.Link className='names text-lg mt-1' href="contactus">Contact</Navbar.Link>
           <div className="flex md:order-2">
-            <a href="signup"><Button style={{ backgroundColor: '#435334' }}>Login</Button></a>
+            <a  href="signup"><Button className='navbutton'>Login</Button></a>
             <Navbar.Toggle />
           </div>
         </Navbar.Collapse>
