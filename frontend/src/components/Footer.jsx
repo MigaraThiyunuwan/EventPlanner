@@ -45,7 +45,6 @@ const Footer = () => {
   return (
     <footer className="bg-secondary text-gray-800">
       <div className="footerContent grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-4 gap-6 sm:px-8 px-5 py-16">
-        
         {/*logo*/}
         <div>
           <img src={Logo} alt="BlissHub Logo" className="max-w-full max-h-10" />
@@ -91,9 +90,11 @@ const Footer = () => {
         {/*contact*/}
         <div>
           <ul>
-            <h1 className="mb-2 font-semibold uppercase text-lg">Contact Us</h1>
-            {SocialMedia.map((link, index) => (
-              <li key={index}>
+            <h1 className="footerText mb-2 font-semibold uppercase text-lg">
+              Contact Us
+            </h1>
+            {SocialMedia.map((link) => (
+              <li key={link.name}>
                 <div className="flex justify-start">
                   <a
                     className="footerText text-gray-500 font-semibold py-2 hover:text-primary duration-300 cursor-pointer leading-6"
