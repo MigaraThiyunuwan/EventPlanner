@@ -1,34 +1,95 @@
 .signContainer {
-    height: 700px;
-    display: flex;
-    justify-content: center;
-    background-image: url("../images/wedding.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  background-image: url("../images/wedding.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
 }
 
 .formgrid {
-    width: 500px;
-    height: 500px;
+  justify-content: center;
+  width: 500px;
+  height: 530px;
+  padding: 30px;
+  margin: 20px;
+  margin-top: 100px;
+  background-color: #ffffff;
+  opacity: 0.95;
+  box-shadow: 0px 0px 18px #ccc;
+}
+
+.formgrid2 {
+  justify-content: center;
+  width: 500px;
+  height: 530px;
+  padding: 30px;
+  margin: 20px;
+  margin-top: 0px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: #ffffff;
+  opacity: 1;
+  box-shadow: 0px 0px 18px #ccc;
+}
+
+.signimg {
+  width: 1000px;
+  height: 550px;
+}
+
+.textArea {
+  margin-bottom: 20px;
+}
+
+:root {
+  --primary-dark: #435334;
+  --primary-light: #D5ABB2;
+}
+
+.subButton {
+  display: flex;
+  justify-content: center;
+
+}
+
+.button {
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--primary-dark);
+}
+
+@media screen and (max-width: 480px) {
+
+  .formgrid {
+    justify-content: center;
+    width: 400px;
+    height: 530px;
     padding: 30px;
-    margin: 20px;
     margin-top: 100px;
     background-color: #ffffff;
     opacity: 0.95;
     box-shadow: 0px 0px 18px #ccc;
-}
+  }
+  .formgrid2 {
+    justify-content: center;
+    width: 350px;
+    height: 530px;
+    padding: 30px;
+    margin-top: 100px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #ffffff;
+    opacity: 1;
+    box-shadow: 0px 0px 18px #ccc;
+  }
 
-.signimg {
-    width: 1000px;
-    height: 550px;
+  .description {
+    margin: 15px;
+    font-family: 'Consolas';
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
 }
-:root {
-    --primary-dark: #435334;
-    --primary-light: #D5ABB2;
-  }
-  
-  .button {
-    background-color: var(--primary-dark);
-  }

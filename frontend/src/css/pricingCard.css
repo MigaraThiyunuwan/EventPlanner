@@ -9,12 +9,13 @@ body{
 
 }
 .wrapper{
+    
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-gap: 15px;
 
 }
 .pricing-table{
+   background-color: #43533444;
    box-shadow: 0px 0px 18px #ccc;
    text-align: center;
    padding: 30px 0px;
@@ -34,31 +35,41 @@ body{
 
 .pricing-table .head .title{
     margin-bottom: 20px;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 700;
 }
-.abcd{
-    margin: 50px;
-    padding: 0px 20px;
-}
+
 .hehe{
-    margin-top: 30px;
+    margin-right: 60px;
+    margin-bottom: 30px;
+}
+
+.nextBtn{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: #B76E79;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 7px;
+    margin: 5px;
 }
 .pricing-table .content .price{
-    background:linear-gradient(to right, #B76E79 0%, #fad2d8 100%);
+    background:linear-gradient(to right, #435334 0%, #435334 100%);
     width: 200px;
     height: 90px;
     margin: auto;
     line-height: 90px;
     border-radius: 0%;
-    border: 5px solid #fff;
+    border: 3px solid #fff;
     box-shadow: 0px 0px 10px #ccc;
     margin-top: -50px;
      transition: all 0.5s ease;
 }
 .pricing-table:hover .content .price{
-    transform: scale(1.2);
- 
+    transform: scale(1.05);
 }
 .pricing-table .content .price h1{
     color:#fff;
@@ -74,11 +85,11 @@ body{
 .pricing-table .content ul li{
     margin: 20px 0px;
     font-size: 14px;
-    color:#555;
+    color:#525252;
 }
 
 .pricing-table .content .sign-up{
-    background:linear-gradient(to right, #B76E79 0%, #fad2d8 100%);
+    background:linear-gradient(to right, #435334 0%, #435334 100%);
     border-radius: 40px;
     font-weight: 500;
     position: relative;
@@ -108,7 +119,7 @@ body{
 }
 
 .pricing-table .btn:hover{
-	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 0px 15px #435334;
 }
 
 .pricing-table .btn.bordered {
@@ -140,15 +151,217 @@ body{
 	opacity:0;
 	transform:scale(0);
 }
+/* @media screen and (min-width: 950px) and (max-width: 1980px) {
+    .wrapper{
+        grid-template-columns: repeat(2,1fr);
+    }
+    
+    .abcd{
+        margin-top: 50px;
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-bottom: 20px;
+    }
+    .pricing-table{
+        width: 380px;
+      
+     }
+	
+} */
+@media screen and (max-width:1980px){
+    .wrapper{
+        grid-template-columns: repeat(3,1fr);
+    }
+    
+    .abcd{
+        margin-top: 50px;
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-bottom: 20px;
+    }
+    .pricing-table{
+        width: 380px;
+      
+     }
+     .pricing-table .btn:hover{
+        box-shadow: 0px 0px 15px #435334;
+    }
+
+}
+
+@media screen and (max-width:1280px){
+    .wrapper{
+        grid-template-columns: repeat(2,1fr);
+    }
+    
+    .abcd{
+        margin-top: 50px;
+        margin-right: 10px;
+        margin-bottom: 20px;
+    }
+    .pricing-table{
+        width: 500px;
+      
+     }
+     .pricing-table .btn:hover{
+        box-shadow: 0px 0px 15px #435334;
+    }
+}
+
+
+@media screen and (max-width:1024px){
+    .wrapper{
+        grid-template-columns: repeat(2,1fr);
+    }
+    
+    .abcd{
+        margin-top: 50px;
+        margin-right: 10px;
+        margin-bottom: 20px;
+    }
+    .pricing-table{
+        width: 330px;
+      
+     }
+     .pricing-table .btn:hover{
+        box-shadow: 0px 0px 15px #435334;
+    }
+}
 
 @media screen and (max-width:768px){
    .wrapper{
         grid-template-columns: repeat(2,1fr);
     } 
+    .pricing-table{
+        width: 310px;
+     }
+     .pricing-table .btn:hover{
+        box-shadow: 0px 0px 15px #435334;
+    }
+     
 }
 
 @media screen and (max-width:600px){
    .wrapper{
         grid-template-columns: 1fr;
     } 
+    .hehe{
+        margin-left: 50px;
+        display: flex;
+        justify-content: center;
+    }
+    .abcd{
+        margin-top: 50px;
+        margin-bottom: 20px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .pricing-table{
+        width: 510px;
+      
+     }
+     .pricing-table .btn:hover{
+        box-shadow: 0px 0px 15px #435334;
+    }
+    
 }
+
+
+@media screen and (max-width:430px){
+    .wrapper{
+         grid-template-columns: 1fr;
+     } 
+     .hehe{
+         margin-left: 50px;
+         display: flex;
+         justify-content: center;
+     }
+     .abcd{
+         margin-top: 50px;
+         margin-bottom: 20px;
+         margin-right: 10px;
+         margin-left: 10px;
+     }
+     .pricing-table{
+         width: 410px;
+       
+      }
+      .pricing-table .btn:hover{
+        box-shadow: 0px 0px 15px #435334;
+    }
+     
+ }
+
+ @media screen and (max-width:390px){
+    .wrapper{
+         grid-template-columns: 1fr;
+     } 
+     .hehe{
+         margin-left: 50px;
+         display: flex;
+         justify-content: center;
+     }
+     .abcd{
+         margin-top: 50px;
+         margin-bottom: 20px;
+         margin-right: 10px;
+         margin-left: 10px;
+     }
+     .pricing-table{
+         width: 370px;
+       
+      }
+      .pricing-table .btn:hover{
+        box-shadow: 0px 0px 15px #435334;
+    }
+     
+ }
+ @media screen and (max-width:360px){
+    .wrapper{
+         grid-template-columns: 1fr;
+     } 
+     .hehe{
+         margin-left: 50px;
+         display: flex;
+         justify-content: center;
+     }
+     .abcd{
+         margin-top: 50px;
+         margin-bottom: 20px;
+         margin-right: 10px;
+         margin-left: 10px;
+     }
+     .pricing-table{
+         width: 340px;
+       
+      }
+      .pricing-table .btn:hover{
+        box-shadow: 0px 0px 15px #435334;
+    }
+     
+ }
+
+ @media screen and (max-width:280px){
+    .wrapper{
+         grid-template-columns: 1fr;
+     } 
+     .hehe{
+         margin-left: 50px;
+         display: flex;
+         justify-content: center;
+     }
+     .abcd{
+         margin-top: 50px;
+         margin-bottom: 20px;
+         margin-right: 10px;
+         margin-left: 10px;
+     }
+     .pricing-table{
+         width: 260px;
+       
+      }
+      .pricing-table .btn:hover{
+        box-shadow: 0px 0px 15px #435334;
+    }
+     
+ }

@@ -1,4 +1,3 @@
-
 header {
 	background: url('../images/wedding.jpg');
 	text-align: center;
@@ -10,24 +9,26 @@ header {
 	overflow: hidden;
 	border-radius: 0 0 85% 85% / 30%;
 }
-header .overlay{
+
+header .overlay {
 	width: 100%;
 	height: 100%;
 	padding: 50px;
 	color: #FFF;
 	text-shadow: 1px 1px 1px #333;
-    /* 135deg, #9f05ff69 10%, #fd5e086b 100% */
-  background-image: linear-gradient( 135deg, #33322669 10%, #3f2c11 100%);
-	
+	/* 135deg, #9f05ff69 10%, #fd5e086b 100% */
+	background-image: linear-gradient(135deg, #33322669 10%, #3f2c11 100%);
+
 }
 
 h1 {
 	font-family: 'Dancing Script', cursive;
-	font-size: 80px;
+	font-size: 70px;
 	margin-bottom: 30px;
 }
 
-h3, p {
+h3,
+p {
 	font-family: 'Open Sans', sans-serif;
 	margin-bottom: 30px;
 }
@@ -42,37 +43,88 @@ button1 {
 	margin-bottom: 50px;
 	box-shadow: 0 3px 20px 0 #0000003b;
 }
-button1:hover{
+
+button1:hover {
 	cursor: pointer;
 }
 
-.our-services{
-    display: flex;
-    justify-content: center;
-    margin: 30px;
-    
+.our-services {
+	display: flex;
+	justify-content: center;
+	margin: 30px;
+}
 
+.title {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
 }
-.title{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
+
+.abouttitle {
+	margin-bottom: 20px;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 40px;
 }
-.homeaboutus{
-    display: flex;
-    justify-content: center;
+
+.hometitle {
+	margin: 10px;
+	margin-top: 40px;
+	display: flex;
+	line-height: 180%;
+	justify-content: center;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 5px;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-size: 40px
+	
 }
-.vl {
-    border-left: 2px solid rgb(0, 0, 0);
-    height: 300px;
-    margin: 20px;
-  }
-  .abouttitle{
-    margin: 20px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 40px;
-  }
-  .aboutdiv{
-    width: 500px;
-  }
+
+.serviceimg{
+	height: 225px;
+}
+
+.aboutimg {
+	
+	box-shadow: 0px 0px 18px #ccc;
+}
+
+@media screen and (min-width: 950px) and (max-width: 1980px) {
+
+	/* Your CSS rules for laptop screens go here */
+	.aboutimg {
+		margin-left: 200px;
+		box-shadow: 0px 0px 18px #ccc;
+	}
+	.description {
+		margin-right: 200px;
+		margin-left: 100px;
+		font-family: 'Consolas';
+		font-size: 17px;
+		text-align: justify;
+  		text-justify: inter-word;
+	}
+}
+
+@media screen and (max-width: 480px) {
+
+	/* Your CSS rules for mobile screens go here */
+	.description {
+		margin: 15px;
+		font-family: 'Consolas';
+		text-align: justify;
+  		text-justify: inter-word;
+	}
+
+	.title {
+		display: flex;
+		justify-content: center;
+		font-size: 55px;
+	}
+	.hometitle {
+		font-size: 20px
+	}
+	
+}
