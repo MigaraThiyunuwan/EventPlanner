@@ -18,12 +18,6 @@
   margin-bottom: 10px;
 }
 
-.private{
-  background-image: linear-gradient(45deg, #7c9885, #b5b682);
-}
-
-
-
 @media screen and (max-width: 550px) {
   .btncontainer{
     margin-top: 25px;

@@ -11,10 +11,7 @@ article {
     transition: all 0.4s ease-in-out;
     overflow: hidden;
   }
-  .article-wrapper{
-    
-  }
-  
+
 
   /* basic article elements styling */
   article h2 {

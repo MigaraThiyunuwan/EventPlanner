@@ -4,6 +4,7 @@ import '../css/home.css'
 import '../css/portfolio.css'
 import '../css/service.css'
 import '../css/services.css'
+import '../css/feedback.css'
 import dj from '../images/dj.jpg'
 import catering from '../images/catering.jpg'
 import deco from '../images/deco.jpg'
@@ -13,9 +14,7 @@ import NewNav from '../components/NewNav'
 import Footer from '../components/Footer'
 import "../css/pricingCard.css";
 import "../css/home.css";
-import NavigationBar from "../components/NavigationBar";
-import FooterComponent from "../components/FooterComponent";
-import logo from "../images/about.png";
+import HelloWorld from '../HelloWorld'
 
 function Home() {
   return (
@@ -32,6 +31,7 @@ function Home() {
 
       <div className='hometitle'>
         Cherish Every Moment <br></br> with Our Expertise
+        <HelloWorld/>
       </div>
 
 

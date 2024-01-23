@@ -93,29 +93,14 @@ const AdminDashboard = () => {
                                                             With less than a month to go before the European Union enacts new consumer privacy laws for its citizens,
                                                             companies around the world are updating their terms of service agreements to comply.
                                                         </p>
-                                                       
+
                                                     </div>
                                                 </ToggleModal01>
                                             </div>
                                         </td>
 
                                     </tr>
-                                    <tr className="border-b-200 border-blue-600">
 
-                                        <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
-                                            2023/12/01
-                                        </td>
-                                        <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
-                                            Nimal Perera
-                                        </td>
-                                        <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
-                                            nimalperera@gmail.com
-                                        </td>
-                                        <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
-                                            dfdf
-                                        </td>
-
-                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -124,20 +109,36 @@ const AdminDashboard = () => {
 
                                 <div className="flex items-center space-x-4 text-sm">
                                     <div>2023/12/01</div>
-                                    <div>Pending</div>
+                                    <div>Migara Thiyunuwan</div>
                                 </div>
-                                <div>Photography, Decorations, Photography, Decorations</div>
-                                <div>10000</div>
+                                <div>migarathiyunuwan@gmail.com</div>
+                                <ToggleModal01 message="" btnName="View Message" closeBtn="OK" size="xs">
+                                    <div className="space-y-6">
+                                        <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                                            With less than a month to go before the European Union enacts new consumer privacy laws for its citizens,
+                                            companies around the world are updating their terms of service agreements to comply.
+                                        </p>
+
+                                    </div>
+                                </ToggleModal01>
 
                             </div>
                             <div className="bg-white p-4 space-y-3 rounded-lg shadow">
 
-                                <div className="flex items-center space-x-4 text-sm">
+                            <div className="flex items-center space-x-4 text-sm">
                                     <div>2023/12/01</div>
-                                    <div>Pending</div>
+                                    <div>Migara Thiyunuwan</div>
                                 </div>
-                                <div>Photography, Decorations</div>
-                                <div>10000</div>
+                                <div>migarathiyunuwan@gmail.com</div>
+                                <ToggleModal01 message="" btnName="View Message" closeBtn="OK" size="xs">
+                                    <div className="space-y-6">
+                                        <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                                            With less than a month to go before the European Union enacts new consumer privacy laws for its citizens,
+                                            companies around the world are updating their terms of service agreements to comply.
+                                        </p>
+
+                                    </div>
+                                </ToggleModal01>
 
                             </div>
                         </div>

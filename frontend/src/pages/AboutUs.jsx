@@ -2,6 +2,7 @@ import React from 'react'
 import couple from '../images/couple2.jpg'
 import NewNav from '../components/NewNav'
 import Footer from '../components/Footer'
+import Feedback from '../components/Feedback'
 
 function AboutUs() {
     return (
@@ -48,7 +49,15 @@ function AboutUs() {
 
             </div>
 
-            <Footer/>
+            <h1 className='title'>User Feedbacks</h1>
+
+            <div className='feedbackcon'>
+                <Feedback msg="Let us be your guide as you plan, connect,and celebrate the beginning of your happily ever after!" username="Migara Thiyunuwan"> </Feedback>
+                <Feedback msg="Let us be your guide as you plan, connect,and celebrate the beginning of your happily ever after!" username="Migara Thiyunuwan"> </Feedback>
+                <Feedback msg="Let us be your guide as you plan, connect,and celebrate the beginning of your happily ever after!" username="Migara Thiyunuwan"> </Feedback>
+            </div>
+            
+            <Footer />
 
         </div>
     )
