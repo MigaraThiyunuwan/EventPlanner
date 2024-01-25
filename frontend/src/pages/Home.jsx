@@ -33,7 +33,7 @@ function Home() {
 
       <div className="hometitle">
         Cherish Every Moment <br></br> with Our Expertise
-        <HelloWorld/>
+       
       </div>
 
       <div

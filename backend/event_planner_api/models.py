@@ -13,3 +13,14 @@ class Customer(models.Model):
 
     class Meta:
         db_table = "customer"
+
+
+class Order(models.Model):
+    orderID = models.AutoField(primary_key=True)
+    orderDate = models.DateField()
+    orderStatus = models.CharField(max_length=200)
+    RequestedPackages = models.TextField()
+    total = models.DecimalField(max_digits=6, decimal_places=2)
+
+    def __str__(self):
+        return self.orderStatus
