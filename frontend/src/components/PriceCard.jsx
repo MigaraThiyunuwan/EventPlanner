@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Button, Tooltip } from 'flowbite-react';
 function PriceCard(props) {
   return (
     <div className="abcd">
@@ -22,6 +22,7 @@ function PriceCard(props) {
         </div>
       </div>
     </div>
+
   );
 }
 

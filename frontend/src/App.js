@@ -19,6 +19,9 @@ import Contact from "./pages/Contact";
 import Service from "./pages/Service";
 
 // import HelloWorld from './HelloWorld';
+import Catering from "./pages/Catering";
+import Decoration from "./pages/Decoration";
+import Photography from "./pages/Photography";
 
 function App() {
   return (
@@ -41,6 +44,9 @@ function App() {
         <Route path="aboutus" element={<AboutUs />}></Route>
         <Route path="contact" element={<Contact />}></Route>
         <Route path="services" element={<Service />}></Route>
+        <Route path="catering" element={<Catering />}></Route>
+        <Route path="decoration" element={<Decoration />}></Route>
+        <Route path="photography" element={<Photography />}></Route>
       </Routes>
     </BrowserRouter>
   );
