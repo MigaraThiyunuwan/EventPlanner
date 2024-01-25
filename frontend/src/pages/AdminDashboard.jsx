@@ -15,21 +15,28 @@ import TableRow from '../components/admin/TableRow';
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState("accountDetails");
 
-const [OrderData, setOrderData] = useState([]);
+  const [OrderData, setOrderData] = useState([]);
 
-useEffect(()=>{
-  (async ()=> await Load())();
-}, []);
+  useEffect(() => {
+    (async () => await Load())();
+  }, []);
 
-async function Load(){
-  try {
-    const result = await axios.get("http://localhost:8000/order-details/");
-    setOrderData(result.data);
-    console.log(result);
-  } catch (error) {
-    
+  async function Load() {
+    try {
+      const result = await axios.get("http://localhost:8000/order-details/");
+      setOrderData(result.data);
+      console.log(result);
+    } catch (error) {
+
+    }
   }
-}
+  const handleStatusChange = (orderID, newStatus) => {
+    setOrderData(prevOrderData =>
+      prevOrderData.map(order =>
+        order.orderID === orderID ? { ...order, orderStatus: newStatus } : order
+      )
+    );
+  };
 
 
   return (
@@ -104,58 +111,41 @@ async function Load(){
                   {OrderData.map((service, index) => (
                     <TableRow key={index} data={service} />
                   ))}
-
-                  <tr className="border-b-200 border-blue-600">
-
-                    <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
-                      2023/12/01
-                    </td>
-                    <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
-                      Pending
-                    </td>
-                    <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
-                      Photography, Decorations, Photography, Decorations, Photography
-                    </td>
-                    <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
-                      10000
-                    </td>
-                    <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
-                      <div className='btncontainer'>
-                        <ToggleModal01 message="Are You Sure to Accept this Order?" btnName="Accept" closeBtn="Confirm" size="xs"> </ToggleModal01>
-                        <ToggleModal01 message="Are You Sure to Reject this Order?" btnName="Reject" closeBtn="Confirm" size="xs"> </ToggleModal01>
-                      </div>
-                    </td>
-                  </tr>
                 </tbody>
               </table>
             </div>
             <div className="grid grid-cols-1 gap-4 md:hidden">
-              <div className="bg-white p-4 space-y-3 rounded-lg shadow">
 
-                <div className="flex items-center space-x-4 text-sm">
-                  <div>2023/12/01</div>
-                  <div>Pending</div>
-                </div>
-                <div>Photography, Decorations, Photography, Decorations</div>
-                <div>10000</div>
-                <div className='btncontainer'>
-                  <ToggleModal01 message="Are You Sure to Accept this Order?" btnName="Accept" closeBtn="Confirm" size="xs"> </ToggleModal01>
-                  <ToggleModal01 message="Are You Sure to Reject this Order?" btnName="Reject" closeBtn="Confirm" size="xs"> </ToggleModal01>
-                </div>
-              </div>
-              <div className="bg-white p-4 space-y-3 rounded-lg shadow">
+              {OrderData.map((data) => (
 
-                <div className="flex items-center space-x-4 text-sm">
-                  <div>2023/12/01</div>
-                  <div>Pending</div>
+                <div className="bg-white p-4 space-y-3 rounded-lg shadow">
+
+                  <div className="flex items-center space-x-4 text-sm">
+                    <div>{data.orderDate}</div>
+                    <div>{data.orderStatus}</div>
+                  </div>
+                  <div>{data.RequestedPackages}</div>
+                  <div>{data.total}</div>
+                  <div className='btncontainer'>
+                  {(data.orderStatus !== "Rejected" && data.orderStatus !== "Accepted") && (
+                        <ToggleModal01 message="Confirm to Accept or Reject the Order?" orderID={data.orderID} orderDate={data.orderDate} RequestedPackages={data.RequestedPackages} total={data.total}  btnName="Action" closeBtn="Accept" size="xs"> </ToggleModal01>
+                    )}
+                    {(data.orderStatus == "Rejected") && (
+
+                        < Button size="xs" color="failure">{data.orderStatus}</Button>
+
+                    )}
+                    {(data.orderStatus == "Accepted") && (
+
+                        < Button size="xs" color="blue">{data.orderStatus}</Button>
+
+                    )}
+                  </div>
                 </div>
-                <div>Photography, Decorations</div>
-                <div>10000</div>
-                <div className='btncontainer'>
-                  <ToggleModal01 message="Are You Sure to Accept this Order?" btnName="Accept" closeBtn="Confirm" size="xs"> </ToggleModal01>
-                  <ToggleModal01 message="Are You Sure to Reject this Order?" btnName="Reject" closeBtn="Confirm" size="xs"> </ToggleModal01>
-                </div>
-              </div>
+
+
+              ))}
+
             </div>
           </div>
         </div>
