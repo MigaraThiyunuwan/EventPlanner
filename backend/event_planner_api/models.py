@@ -44,6 +44,7 @@ class Order(models.Model):
 
     def __str__(self):
         return self.orderStatus
+    
 class Message(models.Model):
     full_name = models.CharField(max_length=255)
     email = models.EmailField()
