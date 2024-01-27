@@ -40,7 +40,7 @@ class Order(models.Model):
     orderStatus = models.CharField(max_length=200, default="")
     customer = models.ForeignKey(Customer, related_name='orders', on_delete=models.CASCADE)
     products = models.ManyToManyField(Product, related_name='orders', blank=True)
-    total = models.DecimalField(max_digits=6, decimal_places=2, default=0)
+    total = models.DecimalField(max_digits=16, decimal_places=2, default=0)
 
     def __str__(self):
         return self.orderStatus
