@@ -86,13 +86,13 @@ const UserProfile = () => {
                     </div>
                     <div>
                       <div className="mb-2 block">
-                        <Label htmlFor="small" value="Address" />
+                        <Label htmlFor="small" value="Email" />
                       </div>
-                      <TextInput id="small" type="text" sizing="sm" />
+                      <TextInput id="small" type="email" sizing="sm" />
                     </div>
                   </div>
 
-                  <div>
+                  {/* <div>
                     <div className="mb-2 block">
                       <Label htmlFor="email1" value="Email Address" />
                     </div>
@@ -102,7 +102,7 @@ const UserProfile = () => {
                       placeholder="name@flowbite.com"
                       required
                     />
-                  </div>
+                  </div> */}
 
                   <section className="flex justify-end mt-4 mb-10">
                     <Button className="w-[150px] md:w-[120px] rounded-lg bg-primary uppercase text-white hover:!bg-secondary">

@@ -8,10 +8,29 @@ import NavigatePath from '../components/NavigatePath'
 import NewNav from '../components/NewNav'
 import Footer from '../components/Footer'
 import ToggleModal01 from '../components/ToggleModal01'
+import { useEffect } from 'react';
+import axios from 'axios';
+import TableRow2 from '../components/admin/TableRow2';
 
 
 const AdminDashboard = () => {
     const [activeTab, setActiveTab] = useState("accountDetails");
+    const [MessageData, setMessageData] = useState([]);
+
+    async function LoadMessages() {
+        try {
+            const result = await axios.get("http://localhost:8000/message-details/");
+            setMessageData(result.data);
+            console.log(result);
+        } catch (error) {
+            // handle error
+        }
+    }
+
+    useEffect(() => {
+        (async () => await LoadMessages())();
+    }, []);
+
     return (
         <>
             <NewNav />
@@ -59,9 +78,6 @@ const AdminDashboard = () => {
                                     <tr>
 
                                         <th className="w-30 p-3 text-sm font-semibold  tracking-wide text-center">
-                                            Recievied Date
-                                        </th>
-                                        <th className="w-30 p-3 text-sm font-semibold  tracking-wide text-center">
                                             Name
                                         </th>
                                         <th className="p-3 text-sm font-semibold  tracking-wide text-center">
@@ -74,73 +90,34 @@ const AdminDashboard = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr className="border-b-200 border-blue-600">
-
-                                        <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
-                                            2023/12/01
-                                        </td>
-                                        <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
-                                            Migara Thiyunuwan
-                                        </td>
-                                        <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
-                                            migarathiyunuwan@gmail.com
-                                        </td>
-                                        <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
-                                            <div className='btncontainer'>
-                                                <ToggleModal01 message="" btnName="View Message" closeBtn="OK" size="xs">
-                                                    <div className="space-y-6">
-                                                        <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                                                            With less than a month to go before the European Union enacts new consumer privacy laws for its citizens,
-                                                            companies around the world are updating their terms of service agreements to comply.
-                                                        </p>
-
-                                                    </div>
-                                                </ToggleModal01>
-                                            </div>
-                                        </td>
-
-                                    </tr>
-
+                                    {MessageData.map((service, index) => (
+                                        <TableRow2 key={index} data={service} />
+                                    ))}
                                 </tbody>
                             </table>
                         </div>
                         <div className="grid grid-cols-1 gap-4 md:hidden">
-                            <div className="bg-white p-4 space-y-3 rounded-lg shadow">
+                            {MessageData.map((data) => (
+                                <div className="bg-white p-4 space-y-3 rounded-lg shadow">
 
-                                <div className="flex items-center space-x-4 text-sm">
-                                    <div>2023/12/01</div>
-                                    <div>Migara Thiyunuwan</div>
-                                </div>
-                                <div>migarathiyunuwan@gmail.com</div>
-                                <ToggleModal01 message="" btnName="View Message" closeBtn="OK" size="xs">
-                                    <div className="space-y-6">
-                                        <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                                            With less than a month to go before the European Union enacts new consumer privacy laws for its citizens,
-                                            companies around the world are updating their terms of service agreements to comply.
-                                        </p>
+                                    <div className="flex items-center space-x-4 text-sm">
 
+                                        <div>{data.full_name}</div>
                                     </div>
-                                </ToggleModal01>
+                                    <div>{data.email}</div>
+                                    <ToggleModal01 message="" btnName="View Message" closeBtn="OK" size="xs">
+                                        <div className="space-y-6">
+                                            <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                                            {data.content}
+                                            </p>
 
-                            </div>
-                            <div className="bg-white p-4 space-y-3 rounded-lg shadow">
+                                        </div>
+                                    </ToggleModal01>
 
-                            <div className="flex items-center space-x-4 text-sm">
-                                    <div>2023/12/01</div>
-                                    <div>Migara Thiyunuwan</div>
                                 </div>
-                                <div>migarathiyunuwan@gmail.com</div>
-                                <ToggleModal01 message="" btnName="View Message" closeBtn="OK" size="xs">
-                                    <div className="space-y-6">
-                                        <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                                            With less than a month to go before the European Union enacts new consumer privacy laws for its citizens,
-                                            companies around the world are updating their terms of service agreements to comply.
-                                        </p>
 
-                                    </div>
-                                </ToggleModal01>
-
-                            </div>
+                            ))}
+                            
                         </div>
                     </div>
                 </div>

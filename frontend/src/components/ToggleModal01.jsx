@@ -5,10 +5,9 @@ import { Button, Modal } from 'flowbite-react';
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
-export default function ToggleModal01(props ) {
+export default function ToggleModal01(props) {
   const [openModal, setOpenModal] = useState(false);
   const navigate = useNavigate();
-
   const handleAccept = () => {
     // Make a request to your Django API to update the orderStatus to 'Accepted'
     // You'll need to replace '/api-url/' with the actual URL of your API
@@ -26,7 +25,7 @@ export default function ToggleModal01(props ) {
     })
       .then(response => response.json())
       .then(data => {
-       
+        navigate(0)
         console.log(data);
       });
 
@@ -50,7 +49,7 @@ export default function ToggleModal01(props ) {
     })
       .then(response => response.json())
       .then(data => {
-        // Handle the response data here
+        navigate(0)
         console.log(data);
       });
 
@@ -73,12 +72,28 @@ export default function ToggleModal01(props ) {
               {props.children}
             </h3>
             <div className="flex justify-center gap-4">
-              <Button color="failure" className='!bg-primary hover:!bg-secondary' onClick={handleAccept}>
-                {props.closeBtn}
-              </Button>
-              <Button color="failure" className='!bg-primary hover:!bg-secondary' onClick={handleReject}>
-                Reject
-              </Button>
+              {props.message && (
+                <>
+                  <Button color="failure" className='!bg-primary hover:!bg-secondary' onClick={handleAccept}>
+                    {props.closeBtn}
+                  </Button>
+                  <Button color="failure" className='!bg-primary hover:!bg-secondary' onClick={handleReject}>
+                    {props.cancelBtn}
+                  </Button>
+                </>
+              )}
+
+              {/* {props.message !== null && (
+                <>
+                  <Button color="failure" className='!bg-primary hover:!bg-secondary' onClick={() => setOpenModal(false)}>
+                    {props.closeBtn}
+                  </Button>
+                 
+                </>
+              )} */}
+
+
+
             </div>
           </div>
         </Modal.Body>

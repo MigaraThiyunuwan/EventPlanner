@@ -89,7 +89,8 @@ function Service() {
             
             <div className='bg-secondary serviceDateContainer'>
             <span>Get Start Entering Your date: -</span>
-            <DateComponent/>
+            <input type="date" />
+            {/* <DateComponent/> */}
             <a href="music" ><Button type='submit' className='servicebtn'>Next</Button></a>
             </div>
             
