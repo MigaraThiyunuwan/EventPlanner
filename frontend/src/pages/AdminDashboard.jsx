@@ -8,7 +8,6 @@ import NewNav from '../components/NewNav'
 import Footer from '../components/Footer'
 import ToggleModal01 from '../components/ToggleModal01'
 import axios from 'axios';
-import orderTableData from '../data/orderTableData';
 import TableRow from '../components/admin/TableRow';
 
 
@@ -91,7 +90,7 @@ const AdminDashboard = () => {
                   <tr>
 
                     <th className="w-30 p-3 text-sm font-semibold  tracking-wide text-center">
-                      Order Date
+                      Event Date
                     </th>
                     <th className="w-30 p-3 text-sm font-semibold  tracking-wide text-center">
                       Order Status

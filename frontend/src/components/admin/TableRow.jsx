@@ -29,7 +29,7 @@ const TableRow = ({ data }) => {
             <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
                 <div className='btncontainer'>
                     {(data.orderStatus !== "Rejected" && data.orderStatus !== "Accepted") && (
-                        <ToggleModal01 message="Confirm to Accept or Reject the Order?" orderID={data.orderID} orderDate={data.orderDate} RequestedPackages={data.RequestedPackages} total={data.total}  btnName="Action" closeBtn="Accept" size="xs"> </ToggleModal01>
+                        <ToggleModal01 message="Confirm to Accept or Reject the Order?" orderID={data.orderID} orderDate={data.orderDate} RequestedPackages={data.RequestedPackages} total={data.total}  btnName="Action" closeBtn="Accept" cancelBtn="Reject" size="xs"> </ToggleModal01>
                     )}
                     {(data.orderStatus == "Rejected") && (
 
