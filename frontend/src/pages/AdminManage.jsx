@@ -76,14 +76,14 @@ const AdminManage = () => {
 
                                         <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
                                             <div className='btncontainer'>
-                                                <ToggleModal01 message="" btnName="Entertainment" closeBtn="Confirm" size="md">
+                                                <ToggleModal01 message="" btnName="Entertainment" closeBtn="Confirm" cancelBtn ="Cancel" size="md">
                                                     <div className="space-y-6">
                                                         <h3 className="text-xl font-medium text-gray-900 dark:text-white">Change Entertainment Packages</h3>
                                                         <div>
                                                             <div className="mb-2 block">
                                                                 <Label htmlFor="number" value="DJ Price" />
                                                             </div>
-                                                            <TextInput id="number" type="number" name="dj_price" required />
+                                                            <TextInput id="number" type="number" name="dj_price" placeholder='2344' required />
                                                         </div>
                                                         <div>
                                                             <div className="mb-2 block">
@@ -119,7 +119,7 @@ const AdminManage = () => {
                                         </td>
                                         <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
                                             <div className='btncontainer'>
-                                                <ToggleModal01 message="" btnName="Catering" closeBtn="Confirm" size="md">
+                                                <ToggleModal01 message="" btnName="Catering" closeBtn="Confirm" cancelBtn ="Cancel"  size="md">
                                                     <div className="space-y-6">
                                                         <h3 className="text-xl font-medium text-gray-900 dark:text-white">Change Catering Packages</h3>
                                                         <div>
@@ -162,7 +162,7 @@ const AdminManage = () => {
                                         </td>
                                         <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
                                             <div className='btncontainer'>
-                                                <ToggleModal01 message="" btnName="Photography" closeBtn="Confirm" size="md">
+                                                <ToggleModal01 message="" btnName="Photography" closeBtn="Confirm" cancelBtn ="Cancel"  size="md">
                                                     <div className="space-y-6">
                                                         <h3 className="text-xl font-medium text-gray-900 dark:text-white">Change Photography Packages</h3>
                                                         <div>
@@ -206,7 +206,7 @@ const AdminManage = () => {
 
                                         <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
                                             <div className='btncontainer'>
-                                                <ToggleModal01 message="" btnName="Decorations" closeBtn="Confirm" size="md">
+                                                <ToggleModal01 message="" btnName="Decorations" closeBtn="Confirm" cancelBtn ="Cancel"  size="md">
                                                     <div className="space-y-6">
                                                         <h3 className="text-xl font-medium text-gray-900 dark:text-white">Change Decorations Packages</h3>
                                                         <div>
