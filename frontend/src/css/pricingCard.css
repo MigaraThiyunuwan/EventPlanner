@@ -15,6 +15,7 @@ body{
 
 }
 .pricing-table{
+    margin-top: 30px;
    background-color: #43533444;
    box-shadow: 0px 0px 18px #ccc;
    text-align: center;
@@ -49,6 +50,7 @@ body{
     font-size: 20px;
     font-weight: 500;
     background-color: #B76E79;
+    
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 5px;
@@ -164,10 +166,10 @@ body{
     }
     .pricing-table{
         width: 380px;
-      
-     }
+    }
 	
 } */
+
 @media screen and (max-width:1980px){
     .wrapper{
         grid-template-columns: repeat(3,1fr);
@@ -277,10 +279,10 @@ body{
          justify-content: center;
      }
      .abcd{
-         margin-top: 50px;
-         margin-bottom: 20px;
-         margin-right: 10px;
-         margin-left: 10px;
+        margin-top: 50px;
+        margin-bottom: 20px;
+        margin-right: 10px;
+        margin-left: 10px;
      }
      .pricing-table{
          width: 410px;

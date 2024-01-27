@@ -1,6 +1,12 @@
 import React from 'react'
+import {Button} from 'flowbite-react';
 import NewNav from '../components/NewNav'
 import Footer from '../components/Footer'
+import entertainment from '../images/entertainment.jpg'
+import cateringimg from '../images/cateringimg.jpg'
+import photographyimg from '../images/photographyimg.jpg'
+import decorationimg from '../images/decorationimg.jpg'
+import DateComponent from '../components/DateComponent'
 
 function Service() {
     return (
@@ -23,10 +29,10 @@ function Service() {
                 <article>
                     <div class="bg-secondary article-wrapper">
                         <figure>
-                            <img src="https://picsum.photos/id/1011/800/450" alt="" />
+                            <img src={entertainment} alt="" />
                         </figure>
                         <div class="article-body">
-                            <h2>This is some title</h2>
+                            <h2>Entertainment</h2>
                             <p>
                                 Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
                             </p>
@@ -38,10 +44,10 @@ function Service() {
 
                     <div class="bg-secondary article-wrapper">
                         <figure>
-                            <img src="https://picsum.photos/id/1005/800/450" alt="" />
+                            <img src={cateringimg} alt="" />
                         </figure>
                         <div class="article-body">
-                            <h2>This is some title</h2>
+                            <h2>Catering</h2>
                             <p>
                                 Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
                             </p>
@@ -53,10 +59,10 @@ function Service() {
 
                     <div class="bg-secondary article-wrapper">
                         <figure>
-                            <img src="https://picsum.photos/id/103/800/450" alt="" />
+                            <img src={photographyimg} alt="" />
                         </figure>
                         <div class="article-body">
-                            <h2>This is some title</h2>
+                            <h2>Photography</h2>
                             <p>
                                 Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
                             </p>
@@ -67,10 +73,10 @@ function Service() {
                 <article>
                     <div class="bg-secondary article-wrapper">
                         <figure>
-                            <img src="https://picsum.photos/id/103/800/450" alt="" />
+                            <img src={decorationimg} alt="" />
                         </figure>
                         <div class="article-body">
-                            <h2>This is some title</h2>
+                            <h2>Decoration</h2>
                             <p>
                                 Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
                             </p>
@@ -79,6 +85,15 @@ function Service() {
                     </div>
                 </article>
             </section>
+
+            
+            <div className='bg-secondary serviceDateContainer'>
+            <span>Get Start Entering Your date: -</span>
+            <input type="date" />
+            {/* <DateComponent/> */}
+            <a href="music" ><Button type='submit' className='servicebtn'>Next</Button></a>
+            </div>
+            
             <Footer />
         </div>
     )

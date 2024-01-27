@@ -1,8 +1,8 @@
-from django.contrib import admin
 from django.urls import path, include
 from . import views
 from rest_framework import routers
-from rest_framework_simplejwt import views as jwt_views
+from .views import MessageView
+from .views import MessageList
 from .products.views import ProductViewSet
 from .orders.views import OrderViewSet
 
@@ -16,5 +16,7 @@ urlpatterns = [
     path('validate_signup', views.validate_signup, name='validate_signup'),
 
     path('', include(router.urls)),
-    
+
+    path('messages/', MessageView.as_view(), name='message'),
+    path('message-details/', MessageList.as_view()),
 ]
