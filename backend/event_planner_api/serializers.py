@@ -1,15 +1,4 @@
-# from rest_framework import serializers
-# from .models import User
-# from .models import Order
-# from .models import Message
-# from django.contrib.auth.models import User, Group
-# from rest_framework.authtoken.views import Token
-# from rest_framework.authtoken.models import Token
-# from django.contrib.auth import authenticate
-
 from rest_framework import serializers
-# from .models import User
-# from .models import Order
 from . models import Message , User , Order
 from django.contrib.auth.models import Group
 from rest_framework.authtoken.views import Token

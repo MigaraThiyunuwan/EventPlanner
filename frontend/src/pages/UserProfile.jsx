@@ -3,7 +3,9 @@ import UserPhoto from "../images/User.jpg";
 import axios from "axios";
 import React, { lazy, useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
-const NavigationBar = lazy(() => import("../components/NavigationBar"));
+import NewNav from "../components/NewNav";
+import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 const Footer = lazy(() => import("../components/Footer"));
 
 
@@ -14,6 +16,12 @@ function UserProfile() {
   const [error, setError] = useState(null);
   const [cookies] = useCookies(['mytoken']);  // Get the token from the cookies
 
+  let navigate = useNavigate();
+
+    function Logout() {
+        Cookies.remove('mytoken');
+        navigate("/");
+    }
   useEffect(() => {
     // const token = cookies.mytoken;
 
@@ -50,7 +58,8 @@ function UserProfile() {
   return (
     <div>
 
-      <NavigationBar />
+      
+      <NewNav/>
 
       <section className="mt-12 mb-16 mx-4 grid grid-cols-1 gap-2 md:grid-cols-4 lg:grid-cols-4">
         <div className="items-center h-full col-span-1 md:col-span-1">
@@ -71,7 +80,13 @@ function UserProfile() {
               <Button className="w-[150px] md:w-[170px] rounded-lg bg-primary uppercase text-white hover:!bg-secondary">
                 Edit Profile Picture
               </Button>
+              
             </section>
+            <section className="flex justify-center mt-2 mb-10">
+              <Button onClick={Logout} className="w-[150px] md:w-[170px] rounded-lg bg-primary uppercase text-white hover:!bg-secondary">
+                Logout
+              </Button>
+            </section>  
           </Card>
         </div>
 
@@ -129,7 +144,7 @@ function UserProfile() {
                       <div className="mb-2 block">
                         <Label htmlFor="small" value="Email" />
                       </div>
-                      <TextInput id="small" type="email" sizing="sm" />
+                      <TextInput id="small" type="email" sizing="sm" value={user.email} />
                     </div>
                   </div>
 
