@@ -18,15 +18,16 @@ export default function ToggleModal01(props) {
       },
       body: JSON.stringify({
         orderDate: props.orderDate,
-        RequestedPackages: props.RequestedPackages,
+        customer_id : 1,
+        // RequestedPackages: props.RequestedPackages,
         total: props.total,
         orderStatus: 'Accepted',
       }),
     })
       .then(response => response.json())
       .then(data => {
-        navigate(0)
-        console.log(data);
+        // navigate(0)
+        console.log("Data__",data);
       });
 
     setOpenModal(false);
@@ -42,7 +43,7 @@ export default function ToggleModal01(props) {
       },
       body: JSON.stringify({
         orderDate: props.orderDate,
-        RequestedPackages: props.RequestedPackages,
+        // RequestedPackages: props.RequestedPackages,
         total: props.total,
         orderStatus: 'Rejected',
       }),

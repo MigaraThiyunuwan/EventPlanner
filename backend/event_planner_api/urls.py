@@ -11,6 +11,7 @@ from .orders.views import OrderViewSet
 router = routers.DefaultRouter()
 router.register(r'product', ProductViewSet, basename="product")
 router.register(r'order', OrderViewSet, basename="order")
+router.register(r'order-details', OrderViewSet)
 
 urlpatterns = [
     path('messages/', MessageView.as_view(), name='message'),

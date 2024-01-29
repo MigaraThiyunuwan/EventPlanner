@@ -46,7 +46,7 @@ class Service(models.Model):
 class Order(models.Model):
     orderID = models.AutoField(primary_key=True)
     orderDate = models.DateField()
-    orderStatus = models.CharField(max_length=200, default="")
+    orderStatus = models.CharField(max_length=200, default="pending")
     customer = models.ForeignKey(User, related_name='orders', on_delete=models.CASCADE)
     products = models.ManyToManyField(Product, related_name='orders', blank=True)
     total = models.DecimalField(max_digits=16, decimal_places=2, default=0)
