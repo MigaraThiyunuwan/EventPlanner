@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import NavigationBar from "../components/NavigationBar";
 import heroImageData from "../data/heroImageData";
 import HeroImage from "../components/Services/HeroImage";
 import Footer from "../components/Footer";
 import ServiceCardButton from "../components/Services/ServiceCardButton";
-import cateringData from "../data/cateringData";
 import ServiceCard from "../components/Services/ServiceCard";
 import { useLocation, useNavigate } from "react-router-dom";
+import NewNav from "../components/NewNav";
 
 const Catering = () => {
   const { state } = useLocation();
@@ -28,7 +27,8 @@ const Catering = () => {
   return (
     <>
       {/*navbar*/}
-      <NavigationBar />
+      
+      <NewNav/>
 
       {/*main section*/}
       {heroImageData.map(

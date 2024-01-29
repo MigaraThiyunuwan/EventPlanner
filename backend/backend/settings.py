@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     "rest_framework",
     "corsheaders",
     "event_planner_api",
+    "rest_framework.authtoken",
+    "knox"
 ]
 
 MIDDLEWARE = [
@@ -87,9 +89,9 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'event-planner',
-        'USER': 'root',
-        'PASSWORD': '',
+        'NAME': 'db',
+        'USER': 'user',
+        'PASSWORD': 'password',
         'HOST': 'localhost',
         'PORT': '3306',
     }
@@ -136,3 +138,17 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'event_planner_api.User'
+
+REST_FRAMEWORK = {'DEFAULT AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',),
+
+}
+
+REST_KNOX = {
+
+'USER_SERIALIZER': 'accounts.serializers.UserSerializer',
+'TOKEN TTL': timedelta(hours=48)
+
+}
+
