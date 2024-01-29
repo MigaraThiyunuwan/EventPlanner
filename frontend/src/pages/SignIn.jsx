@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import logo from '../images/logo_trans.png'
 import NewNav from '../components/NewNav'
 import Footer from '../components/Footer'
-import { useState,useEffect} from 'react';
 import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
 import APIService from '../components/API/APIService';

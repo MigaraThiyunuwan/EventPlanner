@@ -1,8 +1,8 @@
 import React from "react";
 
-const serviceCard = ({ data }) => {
+const serviceCard = ({ data, selected, onSelect }) => {
   return (
-    <div className="pricing-table gprice-single">
+    <div className={`pricing-table gprice-single ${selected ? 'border border-primary' : ''}`}>
       <div className="head">
         <h4 className="title">{data.title}</h4>
       </div>
@@ -16,9 +16,9 @@ const serviceCard = ({ data }) => {
           ))}
         </ul>
         <div className="sign-up">
-          <a href="#" className="btn bordered radius">
-            Signup Now
-          </a>
+          <button onClick={onSelect} className={`btn bordered radius`}>
+            {selected ?  "Cancel" : "Select"}
+          </button>
         </div>
       </div>
     </div>
