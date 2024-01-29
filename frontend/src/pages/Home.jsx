@@ -12,10 +12,22 @@ import photo from '../images/photo.jpg'
 import couple from '../images/couple.jpg'
 import NewNav from '../components/NewNav'
 import Footer from '../components/Footer'
+import UseUser from '../components/UseUser'
 import "../css/pricingCard.css";
 import "../css/home.css";
 function Home() {
-  
+  const user = UseUser();
+    let headerLink = null
+    let headerLinkName = null
+    if (!user) {
+        // return <div>Loading...</div>;
+        headerLink = "/signup";
+        headerLinkName =  "Signup Now";
+    }
+    if (user) {
+      headerLink = user.role === "customer" ? "/user_profile" : "/signup";
+      headerLinkName = user.role === "customer" ? "My Profile" : "Signup Now";
+    }
   return (
     <div>
       <NewNav/>
@@ -24,8 +36,8 @@ function Home() {
           <h1>Welcome to BlissHub </h1>
           <p>Bliss Hub.. ultimate online destination for seamless wedding planning!</p>
           <br></br>
-          <a href="signup">
-            <button1>Sign Up Now</button1>
+          <a href={headerLink}>
+            <button1>{headerLinkName}</button1>
           </a>
         </div>
       </header>
