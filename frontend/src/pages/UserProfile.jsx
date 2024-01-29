@@ -18,8 +18,10 @@ function UserProfile() {
   const [lastname, setLastname] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
-
+  const [id, setId] = useState("");
   let navigate = useNavigate();
+
+  const [orders, setOrders] = useState([]);
 
   function Logout() {
     Cookies.remove("mytoken");
@@ -33,21 +35,37 @@ function UserProfile() {
 
     if (cookies["mytoken"]) {
       console.log("Making fetch request..."); // Log that the fetch request is being made
+      try {
+        // Fetch the user data
+        axios
+          .get("http://127.0.0.1:8000/get-user/", {
+            headers: {
+              Authorization: `Token ${cookies["mytoken"]}`,
+            },
+          })
+          .then((response) => setUser(response.data))
+          .catch((error) => {
+            console.error("Error:", error);
+            setError(error);
+          });
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }, [cookies["mytoken"]]);
 
-      // Fetch the user data
+  useEffect(() => {
+    if (cookies["mytoken"] && user) {
       axios
-        .get("http://127.0.0.1:8000/get-user/", {
+        .get("http://127.0.0.1:8000/get-order/", {
           headers: {
             Authorization: `Token ${cookies["mytoken"]}`,
           },
         })
-        .then((response) => setUser(response.data))
-        .catch((error) => {
-          console.error("Error:", error);
-          setError(error);
-        });
+        .then((response) => setOrders(response.data))
+        .catch((error) => console.error("Error fetching orders:", error));
     }
-  }, [cookies["mytoken"]]);
+  }, [cookies["mytoken"], user]);
 
   //display the error message
   if (error) {
@@ -82,30 +100,20 @@ function UserProfile() {
       },
     });
     try {
-      const response = await axios.post(
-        "http://127.0.0.1:8000/update_user",
-        content
+      const response = await axios.put(
+        `http://127.0.0.1:8000/updateProfile/${user.id}/`,
+        content,
+        {
+          headers: {
+            Authorization: `Token ${cookies["mytoken"]}`,
+          },
+        }
       );
 
       console.log("response: ", response.data);
     } catch (error) {
       console.error("there was an error!", error);
     }
-
-    // await axios
-    //   .post("http://127.0.0.1:8000/update_user/", formData)
-    //   .then((response) => {
-    //     if (response.status === 201) {
-    //       console.log("ok");
-    //     } else if (response.status === 500) {
-    //       console.log("error");
-    //     } else {
-    //       console.log("invalid");
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.log(error?.response?.status);
-    //   });
   };
   return (
     <div>
@@ -245,7 +253,6 @@ function UserProfile() {
                         sizing="sm"
                         defaultValue={user.phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        // onChange={(e) => handleInputChange(e, "phone")}
                       />
                     </div>
                     <div>
@@ -294,73 +301,31 @@ function UserProfile() {
                     <th className="w-30 p-3 text-sm font-semibold  tracking-wide text-center">
                       Order Status
                     </th>
-                    <th className="p-3 text-sm font-semibold  tracking-wide text-center">
-                      Packages
-                    </th>
                     <th className="w-30 p-3 text-sm font-semibold  tracking-wide text-center">
                       Total Price
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b-200 border-blue-600">
-                    <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
-                      1
-                    </td>
-                    <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
-                      2023/12/01
-                    </td>
-                    <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
-                      Pending
-                    </td>
-                    <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
-                      Photography, Decorations
-                    </td>
-                    <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
-                      10000
-                    </td>
-                  </tr>
-                  <tr className="border-b-200 border-blue-600">
-                    <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
-                      2
-                    </td>
-                    <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
-                      2023/12/01
-                    </td>
-                    <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
-                      Pending
-                    </td>
-                    <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
-                      Photography, Decorations, Photography, Decorations,
-                      Photography
-                    </td>
-                    <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
-                      10000
-                    </td>
-                  </tr>
+                  {orders.map((order) => (
+                    <tr className="border-b-200 border-blue-600">
+                      <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
+                        {order.orderID}
+                      </td>
+                      <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
+                        {order.orderDate}
+                      </td>
+                      <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
+                        {order.orderStatus}
+                      </td>
+                      <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
+                        {order.total}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
-            {/* <div className="grid grid-cols-1 gap-4 md:hidden">
-              <div className="bg-white p-4 space-y-3 rounded-lg shadow">
-                <div>1</div>
-                <div className="flex items-center space-x-4 text-sm">
-                  <div>2023/12/01</div>
-                  <div>Pending</div>
-                </div>
-                <div>Photography, Decorations, Photography, Decorations</div>
-                <div>10000</div>
-              </div>
-              <div className="bg-white p-4 space-y-3 rounded-lg shadow">
-                <div>2</div>
-                <div className="flex items-center space-x-4 text-sm">
-                  <div>2023/12/01</div>
-                  <div>Pending</div>
-                </div>
-                <div>Photography, Decorations</div>
-                <div>10000</div>
-              </div>
-            </div> */}
           </div>
         </div>
       </section>

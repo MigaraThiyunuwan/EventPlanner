@@ -30,9 +30,9 @@ class CreateUserAPI(CreateAPIView):
     permission_classes = (AllowAny,)
 
 class UpdateUserAPI(UpdateAPIView):
-
+    serializer_class = UserSerializer
     queryset = User.objects.all()
-    serializer_class = UpdateUserSerializer
+    
 
 class LoginAPIView(knox_views.LoginView):
 
@@ -128,6 +128,8 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
+
+#get user details
 class GetUserView(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
@@ -135,15 +137,31 @@ class GetUserView(APIView):
     def get(self, request):
         user = request.user
         return Response({'id': user.id, 'username': user.username, 'role': user.role , 'first_name': user.first_name , 'last_name': user.last_name , 'phone': user.phone , 'email': user.email})
-    
-from django.shortcuts import get_object_or_404
 
-User = get_user_model()
-@api_view(['POST'])
-def update_user(request):
-    user = get_object_or_404(User, id=request.user.id)
-    serializer = UpdateUserSerializer(user, data=request.data, partial=True)
-    if serializer.is_valid():
-        serializer.save()
-        return Response(serializer.data, status=200)
-    return Response(serializer.errors, status=400)
+
+#update user details
+class UpdateUserProfileAPI(viewsets.ModelViewSet):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+    serializer_class = UserSerializer
+    queryset = User.objects.all()
+
+    def put(request):
+        user = get_object_or_404(User, id=request.user.id)
+        serializer = UserSerializer(user, data=request.data, partial=True ,many=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=200)
+        return Response(serializer.errors, status=400)
+    
+
+#get order details
+class GetOrderView(APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        user = request.user
+        orders = Order.objects.filter(customer_id=user.id)
+        serializer = OrderSerializer(orders, many=True)
+        return Response(serializer.data)
