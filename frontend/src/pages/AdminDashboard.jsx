@@ -24,7 +24,7 @@ const AdminDashboard = () => {
     try {
       const result = await axios.get("http://localhost:8000/order-details/");
       setOrderData(result.data);
-      console.log(result);
+      console.log("server response data",result);
     } catch (error) {
 
     }
@@ -123,11 +123,11 @@ const AdminDashboard = () => {
                     <div>{data.orderDate}</div>
                     <div>{data.orderStatus}</div>
                   </div>
-                  <div>{data.RequestedPackages}</div>
+                  <div>hhhh</div>
                   <div>{data.total}</div>
                   <div className='btncontainer'>
                   {(data.orderStatus !== "Rejected" && data.orderStatus !== "Accepted") && (
-                        <ToggleModal01 message="Confirm to Accept or Reject the Order?" orderID={data.orderID} orderDate={data.orderDate} RequestedPackages={data.RequestedPackages} total={data.total}  btnName="Action" closeBtn="Accept" size="xs"> </ToggleModal01>
+                        <ToggleModal01 message="Confirm to Accept or Reject the Order?" orderID={data.orderID} orderDate={data.orderDate} RequestedPackages="hhh" total={data.total}  btnName="Action" closeBtn="Accept" size="xs"> </ToggleModal01>
                     )}
                     {(data.orderStatus == "Rejected") && (
 

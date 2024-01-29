@@ -5,15 +5,18 @@ import { Button, Navbar } from 'flowbite-react';
 function NewNav() {
     const user = UseUser();
     let link = null
+    let link2 = null
     let linkName = null
     if (!user) {
         // return <div>Loading...</div>;
+        link2 = "/signin"
         link = "/signin";
         linkName =  "Login";
     }
     if (user) {
-        link = user.role === "customer" ? "/user_profile" : "/signin";
-        linkName = user.role === "customer" ? "My Profile" : "Login";
+        link2 = "services"
+        link = user.role === "customer" ? "/user_profile" : "/adminprofile";
+        linkName = user.role === "customer" ? "My Profile" : "Admin Profile";
     }
     return (
         <Navbar fluid rounded className='navcom'>
@@ -26,7 +29,7 @@ function NewNav() {
                     Home
                 </Navbar.Link>
 
-                <Navbar.Link href="services" className='names'>Services</Navbar.Link>
+                <Navbar.Link href={link2} className='names'>Services</Navbar.Link>
                 <Navbar.Link href="portfolio" className='names'>Portfolio</Navbar.Link>
                 <Navbar.Link href="aboutus" className='names'>About</Navbar.Link>
                 <Navbar.Link href="contact" className='names'>Contact</Navbar.Link>

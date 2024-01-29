@@ -3,13 +3,22 @@ import { Card, Button, Label, TextInput, Table } from "flowbite-react";
 import UserPhoto from "../images/User.jpg";
 import '../css/adminProfile.css'
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 import NewNav from '../components/NewNav'
 import Footer from '../components/Footer'
+import UseUser from '../components/UseUser';
 
-
-const AdminProfile = () => {
+function AdminProfile ()  {
+     const user = UseUser();
+    
     const [activeTab, setActiveTab] = useState("accountDetails");
 
+    let navigate = useNavigate();
+    function Logout() {
+        Cookies.remove('mytoken');
+        navigate("/");
+    }
     return (
         <div>
             <NewNav />
@@ -24,16 +33,21 @@ const AdminProfile = () => {
                             className="mb-3 rounded-full shadow-lg mx-auto"
                         />
                         <h5 className="mb-1 text-2xl font-medium text-gray-900 dark:text-white">
-                            Migara Thiyunuwan
+                            {user.first_name}
                         </h5>
 
                         {/* Edit Profile Picture Button */}
                         <section className="flex justify-center mt-2 mb-10">
                             <a href='admindashbord'>
-                            <Button className="w-[150px] md:w-[170px] rounded-lg bg-primary uppercase text-white hover:!bg-secondary">
-                                 Admin Dashboard
-                            </Button>
+                                <Button className="w-[150px] md:w-[170px] rounded-lg bg-primary uppercase text-white hover:!bg-secondary">
+                                    Admin Dashboard
+                                </Button>
                             </a>
+                        </section>
+                        <section className="flex justify-center mt-2 mb-10">
+                            <Button onClick={Logout} className="w-[150px] md:w-[170px] rounded-lg bg-primary uppercase text-white hover:!bg-secondary">
+                                Logout
+                            </Button>
                         </section>
                     </Card>
                 </div>
@@ -72,7 +86,7 @@ const AdminProfile = () => {
                                             <div className="mb-2 block">
                                                 <Label htmlFor="small" value="First Name" />
                                             </div>
-                                            <TextInput id="small" type="text" sizing="sm" />
+                                            <TextInput id="small" type="text" sizing="sm"  />
                                         </div>
                                         <div>
                                             <div className="mb-2 block">
@@ -90,23 +104,13 @@ const AdminProfile = () => {
                                         </div>
                                         <div>
                                             <div className="mb-2 block">
-                                                <Label htmlFor="small" value="Address" />
+                                                <Label htmlFor="small" value="Email" />
                                             </div>
                                             <TextInput id="small" type="text" sizing="sm" />
                                         </div>
                                     </div>
 
-                                    <div>
-                                        <div className="mb-2 block">
-                                            <Label htmlFor="email1" value="Email Address" />
-                                        </div>
-                                        <TextInput
-                                            id="email1"
-                                            type="email"
-                                            placeholder="name@flowbite.com"
-                                            required
-                                        />
-                                    </div>
+                                    
 
                                     <section className="flex justify-end mt-4 mb-10">
                                         <Button className="w-[150px] md:w-[120px] rounded-lg bg-primary uppercase text-white hover:!bg-secondary">
@@ -161,7 +165,7 @@ const AdminProfile = () => {
                         )}
                     </div>
 
-                    
+
                 </div>
             </section>
 

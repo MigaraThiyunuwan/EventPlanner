@@ -6,11 +6,12 @@ import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
 export default function ToggleModal01(props) {
+  
   const [openModal, setOpenModal] = useState(false);
   const navigate = useNavigate();
+  
   const handleAccept = () => {
     // Make a request to your Django API to update the orderStatus to 'Accepted'
-    // You'll need to replace '/api-url/' with the actual URL of your API
     fetch(`http://localhost:8000/order-details/${props.orderID}/`, {
       method: 'PUT',
       headers: {
@@ -18,15 +19,15 @@ export default function ToggleModal01(props) {
       },
       body: JSON.stringify({
         orderDate: props.orderDate,
-        RequestedPackages: props.RequestedPackages,
         total: props.total,
         orderStatus: 'Accepted',
+        customer : props.customerID,
       }),
     })
       .then(response => response.json())
       .then(data => {
-        navigate(0)
-        console.log(data);
+        // navigate(0)
+        console.log("Data__",data);
       });
 
     setOpenModal(false);
@@ -34,7 +35,7 @@ export default function ToggleModal01(props) {
 
   const handleReject = () => {
     // Make a request to your Django API to update the orderStatus to 'Rejected'
-    // You'll need to replace '/api-url/' with the actual URL of your API
+    
     fetch(`http://localhost:8000/order-details/${props.orderID}/`, {
       method: 'PUT',
       headers: {
@@ -42,9 +43,9 @@ export default function ToggleModal01(props) {
       },
       body: JSON.stringify({
         orderDate: props.orderDate,
-        RequestedPackages: props.RequestedPackages,
         total: props.total,
         orderStatus: 'Rejected',
+        customer : props.customerID,
       }),
     })
       .then(response => response.json())

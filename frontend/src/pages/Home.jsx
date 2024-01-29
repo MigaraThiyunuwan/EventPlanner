@@ -25,8 +25,8 @@ function Home() {
         headerLinkName =  "Signup Now";
     }
     if (user) {
-      headerLink = user.role === "customer" ? "/user_profile" : "/signup";
-      headerLinkName = user.role === "customer" ? "My Profile" : "Signup Now";
+      headerLink = user.role === "customer" ? "/user_profile" : "/adminprofile";
+      headerLinkName = user.role === "customer" ? "My Profile" : "Admin Profile";
     }
   return (
     <div>
@@ -34,6 +34,7 @@ function Home() {
       <header>
         <div className="overlay">
           <h1>Welcome to BlissHub </h1>
+         
           <p>Bliss Hub.. ultimate online destination for seamless wedding planning!</p>
           <br></br>
           <a href={headerLink}>
