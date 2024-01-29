@@ -34,7 +34,7 @@ export default function ToggleModal01(props) {
 
   const handleReject = () => {
     // Make a request to your Django API to update the orderStatus to 'Rejected'
-    // You'll need to replace '/api-url/' with the actual URL of your API
+    
     fetch(`http://localhost:8000/order-details/${props.orderID}/`, {
       method: 'PUT',
       headers: {
