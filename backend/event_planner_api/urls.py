@@ -1,15 +1,16 @@
-from django.contrib import admin
 from django.urls import path, include
+from knox.views import LogoutView, LogoutAllView
 from . import views
-from rest_framework_simplejwt import views as jwt_views
 from rest_framework import routers
-from .views import OrderViewSet
 from .views import MessageView
 from .views import MessageList
-from knox.views import LogoutView, LogoutAllView
+from .products.views import ProductViewSet
+from .orders.views import OrderViewSet
+
 
 router = routers.DefaultRouter()
-router.register('order-details', OrderViewSet)
+router.register(r'product', ProductViewSet, basename="product")
+router.register(r'order', OrderViewSet, basename="order")
 
 urlpatterns = [
     path('messages/', MessageView.as_view(), name='message'),
@@ -24,4 +25,5 @@ urlpatterns = [
     path('get-user/', views.GetUserView.as_view()),
     path('update_user/', views.update_user, name='update_user')
 
-] + router.urls
+    path('', include(router.urls)),
+]
