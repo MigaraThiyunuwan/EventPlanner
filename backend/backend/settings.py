@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     "rest_framework",
     "corsheaders",
     "event_planner_api",
+    "rest_framework.authtoken",
+    "knox"
 ]
 
 MIDDLEWARE = [
@@ -135,3 +137,17 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'event_planner_api.User'
+
+REST_FRAMEWORK = {'DEFAULT AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',),
+
+}
+
+REST_KNOX = {
+
+'USER_SERIALIZER': 'accounts.serializers.UserSerializer',
+'TOKEN TTL': timedelta(hours=48)
+
+}
+

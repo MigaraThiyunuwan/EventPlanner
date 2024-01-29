@@ -1,19 +1,28 @@
+
 from django.db import models
+from django.contrib.auth.models import AbstractUser,BaseUserManager 
 
-class Customer(models.Model):
-    id = models.AutoField(primary_key=True)
-    first_name = models.CharField(max_length=130)
-    last_name = models.CharField(max_length=130)
-    phone = models.CharField(max_length=15)
-    email = models.CharField(max_length=130)
-    password = models.CharField(max_length=130)
+class User(AbstractUser):
+    
+    first_name = models.CharField(max_length=130, null = True)
+    last_name = models.CharField(max_length=130, null = True)
+    phone = models.CharField(max_length=15, null = True)
+    email = models.EmailField(max_length=130, unique = True)
+    password = models.CharField(max_length=130, null= True)
+    role = models.CharField(max_length=100, default='customer')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    is_staff = models. BooleanField(default=False)
+    is_superuser = models. BooleanField(default=False)
+    is_active = models. BooleanField(default=True)
+    username = None
+    
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
 
-    # USERNAME_FIELD = 'id'
-    # REQUIRED_FIELDS = [id, first_name, last_name, phone, email, password]
-
-    class Meta:
-        db_table = "customer"
-
+    def __str__(self) -> str:
+        return (self.email)
+    
 
 class Order(models.Model):
     orderID = models.AutoField(primary_key=True)

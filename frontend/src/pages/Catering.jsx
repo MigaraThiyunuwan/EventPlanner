@@ -1,17 +1,18 @@
 import React from "react";
-import NavigationBar from "../components/NavigationBar";
 import heroImageData from "../data/heroImageData";
 import HeroImage from "../components/Services/HeroImage";
 import Footer from "../components/Footer";
 import ServiceCardButton from "../components/Services/ServiceCardButton";
 import cateringData from "../data/cateringData";
 import ServiceCard from "../components/Services/ServiceCard";
+import NewNav from "../components/NewNav";
 
 const Catering = () => {
   return (
     <>
       {/*navbar*/}
-      <NavigationBar />
+      
+      <NewNav/>
 
       {/*main section*/}
       {heroImageData.map(
