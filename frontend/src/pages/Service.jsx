@@ -6,8 +6,8 @@ import entertainment from "../images/entertainment.jpg";
 import cateringimg from "../images/cateringimg.jpg";
 import photographyimg from "../images/photographyimg.jpg";
 import decorationimg from "../images/decorationimg.jpg";
-import DateComponent from "../components/DateComponent";
 import { useNavigate } from "react-router-dom";
+import UseUser from "../components/UseUser";
 
 function Service() {
   const navigate = useNavigate();
@@ -15,6 +15,26 @@ function Service() {
   const [date, setDate] = useState(undefined);
   const today = new Date().toISOString().split('T')[0];
 
+  const user = UseUser();
+    let headerLink = null
+    let headerLinkName = null
+    if (!user) {
+      // return <div>Loading...</div>;
+       
+      
+      return(
+      
+      <div>
+        Please Create an Account to use services. 
+        <a href="signin"> click here</a> to LOgin
+      </div>
+      
+      );
+        navigate("signin")
+        headerLink = "/signup";
+        headerLinkName =  "Signup Now";
+    }
+    
   return (
     <div>
       <NewNav />

@@ -15,10 +15,10 @@ class User(AbstractUser):
     is_staff = models. BooleanField(default=False)
     is_superuser = models. BooleanField(default=False)
     is_active = models. BooleanField(default=True)
-    username = None
+    username = models.CharField(max_length=130, null= True)
     
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = ['username','role','first_name', 'last_name', 'phone']
 
     def __str__(self) -> str:
         return (self.email)
