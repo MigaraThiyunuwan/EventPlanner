@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view,permission_classes
 from rest_framework.response import Response
 
 from rest_framework import generics, status
@@ -20,6 +20,7 @@ from rest_framework import status
 from .models import User 
 from knox import views as knox_views
 from django.contrib.auth import login
+from django.contrib.auth import get_user_model
 
 
 class CreateUserAPI(CreateAPIView):
@@ -134,3 +135,15 @@ class GetUserView(APIView):
     def get(self, request):
         user = request.user
         return Response({'id': user.id, 'username': user.username, 'role': user.role , 'first_name': user.first_name , 'last_name': user.last_name , 'phone': user.phone , 'email': user.email})
+    
+from django.shortcuts import get_object_or_404
+
+User = get_user_model()
+@api_view(['POST'])
+def update_user(request):
+    user = get_object_or_404(User, id=request.user.id)
+    serializer = UpdateUserSerializer(user, data=request.data, partial=True)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=200)
+    return Response(serializer.errors, status=400)

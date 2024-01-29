@@ -1,9 +1,10 @@
 from rest_framework import serializers
-from . models import Message , User , Order
+from . models import Message , User , Order, UpdateUser
 from django.contrib.auth.models import Group
 from rest_framework.authtoken.views import Token
 from rest_framework.authtoken.models import Token
 from django.contrib.auth import authenticate
+from django.contrib.auth import get_user_model
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -58,25 +59,14 @@ class CreateUserSerializer (serializers.ModelSerializer):
 
         return user
 
-class UpdateUserSerializer (serializers. ModelSerializer):
-
+class UpdateUserSerializer(serializers.ModelSerializer):
     class Meta:
-
         model = User
+        fields = ('first_name', 'last_name', 'email', 'phone')  # Removed 'password'
 
-        fields = ('first_name', 'last_name', 'email', 'password')
-
-    def update(self, instance, validated_data):
-
-        password = validated_data.pop('password')
-
-        if password:
-
-            instance.set_password(password)
-
-        instance = super().update(instance, validated_data)
-
-        return instance
+    # def update(self, instance, validated_data):
+    #     instance = super().update(instance, validated_data)
+    #     return instance
 
 class LoginSerializer(serializers.Serializer):
 
@@ -123,3 +113,9 @@ class MessageSerializer(serializers.ModelSerializer):
         model = Message
         fields = ['full_name', 'email', 'content']
 
+User = get_user_model()
+
+class UpdateUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'phone', 'email']

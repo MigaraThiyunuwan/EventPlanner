@@ -39,3 +39,10 @@ class Message(models.Model):
     full_name = models.CharField(max_length=255)
     email = models.EmailField()
     content = models.TextField()
+
+
+class UpdateUser(models.Model):
+    first_name = models.CharField(max_length=130, null = True)
+    last_name = models.CharField(max_length=130, null = True)
+    phone = models.CharField(max_length=15, null = True)
+    email = models.EmailField(max_length=130, unique = True)
