@@ -24,7 +24,7 @@ const AdminDashboard = () => {
     try {
       const result = await axios.get("http://localhost:8000/order-details/");
       setOrderData(result.data);
-      console.log(result);
+      console.log("server response data",result);
     } catch (error) {
 
     }

@@ -13,6 +13,7 @@ function Service() {
   const navigate = useNavigate();
 
   const [date, setDate] = useState(undefined);
+  const today = new Date().toISOString().split('T')[0];
 
   return (
     <div>
@@ -105,18 +106,18 @@ function Service() {
         <input
           type="date"
           value={date}
+          min={today}
           onChange={(d) => setDate(d.target.value)}
         />
         {/* <DateComponent/> */}
         <Button
           onClick={() => {
-
-            if (date){
-                navigate("/music", {
-                    state: {
-                      date: date,
-                    },
-                  });
+            if (date && date > today) {
+              navigate("/music", {
+                state: {
+                  date: date,
+                },
+              });
             }
           }}
           className="servicebtn"

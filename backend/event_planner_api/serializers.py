@@ -113,9 +113,7 @@ class LoginSerializer(serializers.Serializer):
 class OrderSerializer(serializers.ModelSerializer):
     class Meta:
         model = Order
-        fields = ["orderID", "orderDate", "orderStatus", "total"]
-
-
+        fields = ["orderID", "orderDate", "orderStatus", "total", "customer"]
 
 
 class MessageSerializer(serializers.ModelSerializer):
