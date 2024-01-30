@@ -9,15 +9,22 @@ import NewNav from '../components/NewNav'
 import Footer from '../components/Footer'
 import UseUser from '../components/UseUser';
 
-function AdminProfile ()  {
-     const user = UseUser();
-    
+function AdminProfile() {
+    const user = UseUser();
+
     const [activeTab, setActiveTab] = useState("accountDetails");
 
     let navigate = useNavigate();
     function Logout() {
         Cookies.remove('mytoken');
         navigate("/");
+    }
+    if (!user) {
+        return (
+            <div>
+                Loading
+            </div>
+        );
     }
     return (
         <div>
@@ -58,111 +65,61 @@ function AdminProfile ()  {
                             Account settings
                         </h3>
                         <div className="w-full h-10 flex justify-start rounded-lg shadow-sm mb-2">
-                            <Button
+                            {/* <Button
                                 className={`text-black bg-white rounded-md shadow-lg my-2 mr-1 ml-3 p-2 uppercase text-md font-semibold hover:!border-lg hover:!border-primary ${activeTab === "accountDetails"
                                     }`}
                                 onClick={() => setActiveTab("accountDetails")}
                             >
                                 Account Details
-                            </Button>
-                            <Button
+                            </Button> */}
+                            {/* <Button
                                 className={`text-black bg-white rounded-md shadow-lg my-2 p-2 text-md font-semibold uppercase hover:border-lg hover:border-primary ${activeTab === "changePassword"
                                     }`}
                                 onClick={() => setActiveTab("changePassword")}
                             >
                                 Change Password
-                            </Button>
+                            </Button> */}
                         </div>
 
                         {/*account details*/}
                         {activeTab === "accountDetails" && (
                             <div className="mt-2">
-                                <h3 className=" m-4 text-xl font-bold text-primary-600 md:text-xl">
+                                {/* <h3 className=" m-4 text-xl font-bold text-primary-600 md:text-xl">
                                     Change Account Details
-                                </h3>
-                                <form className="flex max-w-full flex-col gap-4 m-6">
-                                    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                                        <div>
-                                            <div className="mb-2 block">
-                                                <Label htmlFor="small" value="First Name" />
-                                            </div>
-                                            <TextInput id="small" type="text" sizing="sm"  />
-                                        </div>
-                                        <div>
-                                            <div className="mb-2 block">
-                                                <Label htmlFor="small" value="Last Name" />
-                                            </div>
-                                            <TextInput id="small" type="text" sizing="sm" />
+                                </h3> */}
+                                <div className="p-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+                                    <div className="shadow-md p-6 rounded-lg text-start">
+                                        <div className="font-semibold">First Name</div>
+                                        <div className="text-sm text-gray-700">
+                                            {user.first_name}
                                         </div>
                                     </div>
-                                    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                                        <div>
-                                            <div className="mb-2 block">
-                                                <Label htmlFor="small" value="Phone Number" />
-                                            </div>
-                                            <TextInput id="small" type="text" sizing="sm" />
+                                    <div className="shadow-md p-6 rounded-lg text-start">
+                                        <div className="font-semibold text-sm text-gray-700">
+                                            Last Name
                                         </div>
-                                        <div>
-                                            <div className="mb-2 block">
-                                                <Label htmlFor="small" value="Email" />
-                                            </div>
-                                            <TextInput id="small" type="text" sizing="sm" />
+                                        <div className="text-sm text-gray-700">
+                                            {user.last_name}
                                         </div>
                                     </div>
-
-                                    
-
-                                    <section className="flex justify-end mt-4 mb-10">
-                                        <Button className="w-[150px] md:w-[120px] rounded-lg bg-primary uppercase text-white hover:!bg-secondary">
-                                            Edit Details
-                                        </Button>
-                                    </section>
-                                </form>
+                                    <div className="shadow-md p-6 rounded-lg text-start">
+                                        <div className="font-semibold text-sm text-gray-700">
+                                            Phone Number
+                                        </div>
+                                        <div className="text-sm text-gray-700">{user.phone}</div>
+                                    </div>
+                                    <div className="shadow-md p-6 rounded-lg text-start">
+                                        <div className="font-semibold text-sm text-gray-700">
+                                            Email
+                                        </div>
+                                        <div className="text-sm text-gray-700">{user.email}</div>
+                                    </div>
+                                </div>
                             </div>
                         )}
 
                         {/*change password*/}
-                        {activeTab === "changePassword" && (
-                            <div className="mt-2">
-                                <h3 className="m-4 text-xl font-bold text-primary-600 md:text-xl">
-                                    Change Password
-                                </h3>
-                                <form className="flex max-w-full flex-col gap-4 m-6">
-                                    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                                        <div>
-                                            <div className="mb-2 block">
-                                                <Label htmlFor="password2" value="New password" />
-                                            </div>
-                                            <TextInput
-                                                id="password2"
-                                                type="password"
-                                                required
-                                                shadow
-                                            />
-                                        </div>
-                                        <div>
-                                            <div className="mb-2 block">
-                                                <Label
-                                                    htmlFor="repeat-password"
-                                                    value="Confirm password"
-                                                />
-                                            </div>
-                                            <TextInput
-                                                id="repeat-password"
-                                                type="password"
-                                                required
-                                                shadow
-                                            />
-                                        </div>
-                                    </div>
-                                    <section className="flex justify-end mt-4 mb-10">
-                                        <Button className="w-[180px] md:w-[180px] rounded-lg bg-primary uppercase text-white hover:!bg-secondary">
-                                            Change Password
-                                        </Button>
-                                    </section>
-                                </form>
-                            </div>
-                        )}
+
                     </div>
 
 

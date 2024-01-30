@@ -63,11 +63,11 @@ const AdminDashboard = () => {
                   Back to Profile
                 </Button>
               </a>
-              <a href='managepackages'>
+              {/* <a href='managepackages'>
                 <Button className="w-[150px] md:w-[170px] rounded-lg bg-primary uppercase text-white hover:!bg-secondary">
                   Packages
                 </Button>
-              </a>
+              </a> */}
               <a href='adminmessages'>
                 <Button className="w-[150px] md:w-[170px] rounded-lg bg-primary uppercase text-white hover:!bg-secondary">
                   Messages
@@ -95,9 +95,9 @@ const AdminDashboard = () => {
                     <th className="w-30 p-3 text-sm font-semibold  tracking-wide text-center">
                       Order Status
                     </th>
-                    <th className="p-3 text-sm font-semibold  tracking-wide text-center">
+                    {/* <th className="p-3 text-sm font-semibold  tracking-wide text-center">
                       Requested Packages
-                    </th>
+                    </th> */}
                     <th className="w-30 p-3 text-sm font-semibold  tracking-wide text-center">
                       Total Price
                     </th>

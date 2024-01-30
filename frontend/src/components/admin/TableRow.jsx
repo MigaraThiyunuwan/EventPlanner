@@ -14,16 +14,10 @@ const TableRow = ({ data }) => {
             <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
                 {data.orderStatus}
             </td>
-            <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
-                {/* {data.RequestedPackages.map((services, index) => (
-                    <div key={index}>
-                        {services}
-                    </div>
-                ))} */}
-                {/* {data.RequestedPackages} */}
-                {data.customer}
+            {/* <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
+               
 
-            </td>
+            </td> */}
             <td className="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
                 {data.total}
             </td>

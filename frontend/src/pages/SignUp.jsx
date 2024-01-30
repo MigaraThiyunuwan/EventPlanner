@@ -5,8 +5,6 @@ import Footer from "../components/Footer";
 import APIService from "../components/API/APIService";
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-hot-toast';
-import { useCookies } from 'react-cookie';
 
 
 
@@ -23,28 +21,14 @@ const SignUp =() =>{
 
   let navigate = useNavigate()
   
-  const [role] = useCookies(["role"]);
-  if (response.id != null) {
-
-    if (role["role"] === "customer") {
-      toast.success("Registraion Successfully!")
-      navigate("/login")
-      
-
-    } else {
-      toast.success("Registraion Successfully!")
-      navigate("/admin")
-    }
-  }
-
- 
-
-
   const RegisterBtn = () => {
     
 
     APIService.RegisterUser({ first_name, last_name, email, phone, password })
-      .then((resp) => setResponse(resp))
+      .then((resp) => {
+        setResponse(resp);
+        navigate("/signin"); // navigate to login page
+      })
       .catch(error => console.log("this error : ", error))
   }
   return (

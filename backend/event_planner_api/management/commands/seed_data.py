@@ -3,197 +3,153 @@ from event_planner_api.models import Product
 
 data = [
     {
-    "title": "Morning Function-Indoor",
-    "price": "2500",
+    "title": "Platinum Elegance ",
+    "price": "350000",
     "productType": "DE",
     "services": [
-      "5 GB SSD Cloud Storage",
-      "Month Subscription",
-      "Responsive Framework",
-      "Monthly Billing Software",
-      "1 Free Website"
+      "Customized Theme Design",
+      "Premium Decor Elements",
+      "Personalized Venue Setup",
+      "Floral Arrangements",
+      "Ambient Lighting"
     ]
   },
   {
-    "title": "Morning Function-Outdoor",
-    "price": "3500",
+    "title": "Golden Aura",
+    "price": "250000",
     "productType": "DE",
     "services": [
-      "5 GB SSD Cloud Storage",
-      "Month Subscription",
-      "Responsive Framework",
-      "Monthly Billing Software",
-      "1 Free Website"
+      "Stylish Theme Selection",
+      "Elegant Decor",
+      "Venue Enhancement",
+      "Floral Touches",
+      "Basic Lighting"
     ]
   },
   {
-    "title": "Night Function-Indoor",
-    "price": "5000",
+    "title": "Silver Splendor",
+    "price": "150000",
     "productType": "DE",
     "services": [
-      "5 GB SSD Cloud Storage",
-      "Month Subscription",
-      "Responsive Framework",
-      "Monthly Billing Software",
-      "1 Free Website"
+      "Simple Theme Decor",
+      "Warm Atmosphere Creation",
+      "Essential Venue Enhancement",
+      "Basic Floral Arrangements",
+      "Standard Lighting Setup"
     ]
   },
+ 
   {
-    "title": "Night Function-Outdoor",
-    "price": "5000",
-    "productType": "DE",
-    "services": [
-      "5 GB SSD Cloud Storage",
-      "Month Subscription",
-      "Responsive Framework",
-      "Monthly Billing Software",
-      "1 Free Website"
-    ]
-  },
-  {
-    "title": "Morning Function-Indoor",
-    "price": "2500",
+    "title": "Gold Harmony",
+    "price": "150000",
     "productType": "MU",
     "services": [
-      "5 GB SSD Cloud Storage",
-      "Month Subscription",
-      "Responsive Framework",
-      "Monthly Billing Software",
-      "1 Free Website"
+      "Live Band or DJ Performance",
+      "Interactive Dance Floor",
+      "Specialized Performances",
+      "Customizable Playlist",
+      "High-Quality Sound System"
     ]
   },
   {
-    "title": "Morning Function-Outdoor",
-    "price": "3500",
+    "title": "Silver Serenade",
+    "price": "100000",
     "productType": "MU",
     "services": [
-      "5 GB SSD Cloud Storage",
-      "Month Subscription",
-      "Responsive Framework",
-      "Monthly Billing Software",
-      "1 Free Website"
+      "Live Music Ensemble",
+      "Dance Entertainment",
+      "Engaging MC Services",
+      "Background Music Selection",
+      "Basic Lighting Setup"
     ]
   },
   {
-    "title": "Night Function-Indoor",
-    "price": "5000",
+    "title": "Bronze Melody",
+    "price": "75000",
     "productType": "MU",
     "services": [
-      "5 GB SSD Cloud Storage",
-      "Month Subscription",
-      "Responsive Framework",
-      "Monthly Billing Software",
-      "1 Free Website"
+      "Standard DJ Services",
+      "Background Music",
+      "Limited Lighting Setup",
+      "Basic Dance Floor",
+      "Predefined Playlist"
     ]
   },
+ 
   {
-    "title": "Night Function-Outdoor",
-    "price": "5000",
-    "productType": "MU",
-    "services": [
-      "5 GB SSD Cloud Storage",
-      "Month Subscription",
-      "Responsive Framework",
-      "Monthly Billing Software",
-      "1 Free Website"
-    ]
-  },
-  {
-    "title": "Standard",
-    "price": "2500",
+    "title": "Platinum Feast",
+    "price": "275000",
     "productType": "CA",
     "services": [
-      "5 GB SSD Cloud Storage",
-      "Month Subscription",
-      "Responsive Framework",
-      "Monthly Billing Software",
-      "1 Free Website"
+      "Multi-Course Gourmet Menu",
+      "Personalized Dining Experience",
+      "Professional Waitstaff",
+      "Signature Cocktails",
+      "Dietary Accommodations"
     ]
   },
   {
-    "title": "Deluxe",
-    "price": "3500",
+    "title": "Golden Banquet",
+    "price": "250000",
     "productType": "CA",
     "services": [
-      "5 GB SSD Cloud Storage",
-      "Month Subscription",
-      "Responsive Framework",
-      "Monthly Billing Software",
-      "1 Free Website"
+      "Diverse Buffet Selection",
+      "Skilled Catering Team",
+      "Beverage Station",
+      "Elegant Presentation",
+      "Vegetarian and Non-Vegetarian Options"
     ]
   },
   {
-    "title": "Premium",
-    "price": "5000",
+    "title": "Silver Savory",
+    "price": "175000",
     "productType": "CA",
     "services": [
-      "5 GB SSD Cloud Storage",
-      "Month Subscription",
-      "Responsive Framework",
-      "Monthly Billing Software",
-      "1 Free Website"
+      "Essential Menu",
+      "Buffet Setup",
+      "Standard Presentation",
+      "Self-Service Option",
+      "Basic Beverage Selection"
     ]
   },
   {
-    "title": "Photo Package",
-    "price": "2500",
+    "title": "Diamond Capture",
+    "price": "200000",
     "productType": "PH",
     "services": [
-      "5 GB SSD Cloud Storage",
-      "Month Subscription",
-      "Responsive Framework",
-      "Monthly Billing Software",
-      "1 Free Website"
+      "Full-Day Coverage",
+      "Candid and Posed Shots",
+      "Cinematic Highlights",
+      "Dedicated Photography Team",
+      "High-Resolution Edited Images"
     ]
   },
   {
-    "title": "Video Package",
-    "price": "3500",
+    "title": "Golden Frame",
+    "price": "175000",
     "productType": "PH",
     "services": [
-      "5 GB SSD Cloud Storage",
-      "Month Subscription",
-      "Responsive Framework",
-      "Monthly Billing Software",
-      "1 Free Website"
+      "Comprehensive Coverage",
+      "Professional Portraits",
+      "Highlight Reel",
+      "Skilled Photographer",
+      "Edited High-Quality Images"
     ]
   },
   {
-    "title": "Photo + Preshoot Bundle",
-    "price": "5000",
+    "title": "Silver Snapshot",
+    "price": "150000",
     "productType": "PH",
     "services": [
-      "5 GB SSD Cloud Storage",
-      "Month Subscription",
-      "Responsive Framework",
-      "Monthly Billing Software",
-      "1 Free Website"
+      "Essential Coverage",
+      "Key Moment Photography",
+      "Minimal Editing",
+      "Standard Photographer",
+      "Digital Image Delivery"
     ]
   },
-  {
-    "title": "Premium Photo + Video Collection",
-    "price": "5000",
-    "productType": "PH",
-    "services": [
-      "5 GB SSD Cloud Storage",
-      "Month Subscription",
-      "Responsive Framework",
-      "Monthly Billing Software",
-      "1 Free Website"
-    ]
-  },
-  {
-    "title": "Preshoot + Photo + Video Package",
-    "price": "5000",
-    "productType": "PH",
-    "services": [
-      "5 GB SSD Cloud Storage",
-      "Month Subscription",
-      "Responsive Framework",
-      "Monthly Billing Software",
-      "1 Free Website"
-    ]
-  }
+  
+  
 ]
 
 
