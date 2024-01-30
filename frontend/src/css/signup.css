@@ -24,7 +24,7 @@
 .formgrid2 {
   justify-content: center;
   width: 500px;
-  height: 530px;
+  height: 550px;
   padding: 30px;
   margin: 20px;
   margin-top: 0px;
@@ -92,4 +92,7 @@
     text-justify: inter-word;
   }
 
+  .successMsg {
+    color: #e73600;
+  }
 }

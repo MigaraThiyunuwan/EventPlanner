@@ -84,7 +84,8 @@ function Contact() {
                                 </div>
 
                             </form>
-                            {successMessage && <p>{successMessage}</p>}
+                            {successMessage && <div className='pt-3 pb-3 text-center'><p className='text-green-600 font-bold '>{successMessage}</p></div>}
+             
                         </div>
                     </p>
                 </div>

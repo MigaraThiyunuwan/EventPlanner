@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
 export default function ToggleModal01(props) {
-  
+
   const [openModal, setOpenModal] = useState(false);
   const navigate = useNavigate();
   
@@ -26,7 +26,7 @@ export default function ToggleModal01(props) {
     })
       .then(response => response.json())
       .then(data => {
-        // navigate(0)
+        navigate(0)
         console.log("Data__",data);
       });
 
