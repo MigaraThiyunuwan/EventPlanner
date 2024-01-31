@@ -1,6 +1,6 @@
 # BlissHub - Wedding Planning Website
 
-Welcome to BlissHub, your go-to Wedding Planning Website developed as a mini-project for the Advanced Programming Techniques course module at [Your University Name].
+Welcome to BlissHub, your go-to Wedding Planning Website developed as a mini-project for the Advanced Programming Techniques course module at Uva Wellassa University of Sri Lanka.
 
 ## Overview
 
