@@ -1,9 +1,18 @@
+
+<div align="center">
+
 # BlissHub - Wedding Planning Website
 
-Welcome to BlissHub, your go-to Wedding Planning Website developed as a mini-project for the Advanced Programming Techniques course module at Uva Wellassa University of Sri Lanka.
+</div>
+
+<p align="center">
+  <img src="https://github.com/MigaraThiyunuwan/EventPlanner/blob/main/frontend/src/images/logo_trans.png" alt="Logo">
+</p>
+
+
 
 ## Overview
-
+Welcome to BlissHub, your go-to Wedding Planning Website developed as a mini-project for the Advanced Programming Techniques course module at Uva Wellassa University of Sri Lanka.
 BlissHub is a comprehensive Event Planning website designed specifically for wedding planning. It empowers users to perform essential CRUD operations (Create, Read, Update, Delete) for managing events, vendors, and other crucial data. The frontend is built using React, while the backend is powered by Django.
 
 ## Features
